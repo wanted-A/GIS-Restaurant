@@ -11,7 +11,7 @@ assignees: ''
 작업 내용 작성
 
 ## Todo
-[] todo1
+- [ ] todo1
 
 ## 기타 사항
 etc...
