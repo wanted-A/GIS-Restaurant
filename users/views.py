@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.exceptions import NotFound, PermissionDenied, ValidationError
 
 
-from .serializers import SignupSerializer, LoginSerializer
+from .serializers import SignupSerializer, LoginSerializer, MyPageSerializer
 
 
 class SignupView(APIView):
@@ -98,3 +98,27 @@ class LoginView(APIView):
             {"message": "username, password를 확인해주세요."},
             status=status.HTTP_401_UNAUTHORIZED,
         )
+
+
+class MyPageView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        serializer = MyPageSerializer(user)
+        return Response(serializer.data)
+
+    def put(self, request):
+        user = request.user
+        serializer = MyPageSerializer(
+            user,
+            data=request.data,
+            partial=True,
+        )
+
+        if serializer.is_valid():
+            updated_info = serializer.save()
+            return Response(
+                MyPageSerializer(updated_info).data, status=status.HTTP_200_OK
+            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
