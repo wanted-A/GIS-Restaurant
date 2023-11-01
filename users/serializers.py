@@ -34,3 +34,13 @@ class SignupSerializer(serializers.ModelSerializer):
         else:
             raise ParseError("비밀번호를 입력하세요.")
         return password
+
+
+class LoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            "pk",
+            "username",
+        )
+        read_only_fields = ("pk",)
