@@ -44,3 +44,20 @@ class LoginSerializer(serializers.ModelSerializer):
             "username",
         )
         read_only_fields = ("pk",)
+
+
+class MyPageSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = User
+        fields = "__all__"
+        # fields = (
+        #     "pk",
+        #     "username",
+        #     "email",
+        #     # "is_recommend",
+        #     # "user_lon",
+        #     # "user_lat",
+        # )
+        read_only_fields = ("pk",)
