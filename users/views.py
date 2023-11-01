@@ -100,6 +100,31 @@ class LoginView(APIView):
         )
 
 
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        logout(request)
+        try:
+            # 현재 요청의 사용자의 refresh token을 가져옵니다.
+            refresh_token = request.auth
+            token = RefreshToken(refresh_token)
+
+            # 토큰을 블랙리스트에 추가합니다.
+            token.blacklist()
+
+            request.session.flush()
+
+            res = Response({"detail": "Logout successful."}, status=status.HTTP_200_OK)
+            res.delete_cookie("access")
+
+            return res
+        except TokenError:
+            return Response(
+                {"detail": "Invalid token."}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+
 class MyPageView(APIView):
     permission_classes = [IsAuthenticated]
 
