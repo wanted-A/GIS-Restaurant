@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.exceptions import NotFound, PermissionDenied, ValidationError
 
 
-from .serializers import SignupSerializer
+from .serializers import SignupSerializer, LoginSerializer
 
 
 class SignupView(APIView):
@@ -49,3 +49,52 @@ class SignupView(APIView):
 
             return res
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class LoginView(APIView):
+    """
+    POST: 로그인
+    """
+
+    def post(self, request):
+        username = request.data.get("username")
+        password = request.data.get("password")
+
+        if username is None or password is None:
+            return Response(
+                {"message": "username, password를 입력해주세요."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            serializer = LoginSerializer(user)
+
+            token = RefreshToken.for_user(user)
+            access_token = str(token.access_token)
+            refresh_token = str(token)
+
+            res = Response(
+                {
+                    "user_pk": user.pk,
+                    "username": user.username,
+                    "email": user.email,
+                    "message": "로그인 성공",
+                    "token": {
+                        "access": str(access_token),
+                        "refresh": str(refresh_token),
+                    },
+                },
+                status=status.HTTP_200_OK,
+            )
+
+            request.session["refresh"] = refresh_token
+            res.set_cookie("access", access_token, httponly=True)
+
+            return res
+        return Response(
+            {"message": "username, password를 확인해주세요."},
+            status=status.HTTP_401_UNAUTHORIZED,
+        )
