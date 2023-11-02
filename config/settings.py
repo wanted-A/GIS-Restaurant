@@ -2,7 +2,8 @@ from pathlib import Path
 import os
 import environ
 from datetime import timedelta
-import my_settings
+
+# import my_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -25,13 +26,14 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
+    "django_celery_beat",
+    "django_celery_results",
 ]
 
 CUSTOM_APPS = [
     "users.apps.UsersConfig",
     "restaurants.apps.RestaurantsConfig",
     "ratings.apps.RatingsConfig",
-    "dataHandler.apps.DatahandlerConfig",
 ]
 
 SYSTEM_APPS = [
@@ -165,3 +167,11 @@ SIMPLE_JWT = {
     "TOKEN_BLACKLIST_ENABLED": True,
     "TOKEN_BLACKLIST_APP": "rest_framework_simplejwt.token_blacklist",
 }
+
+# Celery
+CELERY_TIMEZONE = "Asia/Seoul"
+CELERY_BROKER_URL = "amqp://localhost:5672"
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
