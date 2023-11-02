@@ -1,0 +1,352 @@
+[
+	{
+		"model": "restaurants.Location",
+		"pk": 1,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "가평군",
+			"lon": "127.5117778",
+			"lat": "37.82883056"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 2,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "강화군",
+			"lon": "126.49",
+			"lat": "37.74385833"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 3,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "고양시",
+			"lon": "126.7770556",
+			"lat": "37.65590833"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 4,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "과천시",
+			"lon": "126.9898",
+			"lat": "37.42637222"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 5,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "광명시",
+			"lon": "126.8667083",
+			"lat": "37.47575"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 6,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "광주시",
+			"lon": "127.2577861",
+			"lat": "37.41450556"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 7,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "구리시",
+			"lon": "127.1318639",
+			"lat": "37.591625"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 8,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "군포시",
+			"lon": "126.9375",
+			"lat": "37.35865833"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 9,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "김포시",
+			"lon": "126.7177778",
+			"lat": "37.61245833"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 10,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "남양주시",
+			"lon": "127.2186333",
+			"lat": "37.63317778"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 11,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "동두천시",
+			"lon": "127.0626528",
+			"lat": "37.90091667"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 12,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "부천시",
+			"lon": "126.766",
+			"lat": "37.5035917"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 13,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "성남시",
+			"lon": "127.1477194",
+			"lat": "37.44749167"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 14,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "수원시",
+			"lon": "127.0122222",
+			"lat": "37.30101111"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 15,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "시흥시",
+			"lon": "126.8050778",
+			"lat": "37.37731944"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 16,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "안산시",
+			"lon": "126.8468194",
+			"lat": "37.29851944"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 17,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "안성시",
+			"lon": "127.2818444",
+			"lat": "37.005175"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 18,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "안양시",
+			"lon": "126.9533556",
+			"lat": "37.3897"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 19,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "양주시",
+			"lon": "127.0478194",
+			"lat": "37.78245"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 20,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "양평군",
+			"lon": "127.4898861",
+			"lat": "37.48893611"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 21,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "여주군",
+			"lon": "127.652958",
+			"lat": "37.324606"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 22,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "여주시",
+			"lon": "127.6396222",
+			"lat": "37.29535833"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 23,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "연천군",
+			"lon": "127.0770667",
+			"lat": "38.09336389"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 24,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "오산시",
+			"lon": "127.0796417",
+			"lat": "37.14691389"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 25,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "옹진군",
+			"lon": "126.6388889",
+			"lat": "37.443725"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 26,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "용인시",
+			"lon": "127.2038444",
+			"lat": "37.23147778"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 27,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "의왕시",
+			"lon": "126.9703889",
+			"lat": "37.34195"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 28,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "의정부시",
+			"lon": "127.0358417",
+			"lat": "37.73528889"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 29,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "이천시",
+			"lon": "127.4432194",
+			"lat": "37.27543611"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 30,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "파주시",
+			"lon": "126.7819528",
+			"lat": "37.75708333"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 31,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "평택시",
+			"lon": "127.1146556",
+			"lat": "36.98943889"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 32,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "포천시",
+			"lon": "127.2024194",
+			"lat": "37.89215556"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 33,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "하남시",
+			"lon": "127.217",
+			"lat": "37.53649722"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 34,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "화성시",
+			"lon": "126.8335306",
+			"lat": "37.19681667"
+		}
+	},
+	{
+		"model": "restaurants.Location",
+		"pk": 35,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "인천시",
+			"lon": "126.7059186",
+			"lat": "37.45617301"
+		}
+	}
+]

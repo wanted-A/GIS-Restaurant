@@ -1,3 +1,10 @@
 from django.db import models
+from data import data_pipline
 
-# Create your models here.
+
+class Location(models.Model):
+    pass
+
+
+class Restaurant(models.Model):
+    pass

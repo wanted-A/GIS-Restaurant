@@ -1,0 +1,2952 @@
+[
+	{
+		"models": "raw.location",
+		"pk": 1,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "강릉시",
+			"lon": "128.8784972",
+			"lat": "37.74913611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 2,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "고성군",
+			"lon": "128.4701639",
+			"lat": "38.37796111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 3,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "동해시",
+			"lon": "129.1166333",
+			"lat": "37.52193056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 4,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "삼척시",
+			"lon": "129.1674889",
+			"lat": "37.44708611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 5,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "속초시",
+			"lon": "128.5941667",
+			"lat": "38.204275"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 6,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "양구군",
+			"lon": "127.9922444",
+			"lat": "38.10729167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 7,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "양양군",
+			"lon": "128.6213556",
+			"lat": "38.07283333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 8,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "영월군",
+			"lon": "128.4640194",
+			"lat": "37.18086111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 9,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "원주시",
+			"lon": "127.9220556",
+			"lat": "37.33908333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 10,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "인제군",
+			"lon": "128.1726972",
+			"lat": "38.06697222"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 11,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "정선군",
+			"lon": "128.6630861",
+			"lat": "37.37780833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 12,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "철원군",
+			"lon": "127.3157333",
+			"lat": "38.14405556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 13,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "춘천시",
+			"lon": "127.7323111",
+			"lat": "37.87854167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 14,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "태백시",
+			"lon": "128.9879972",
+			"lat": "37.16122778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 15,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "평창군",
+			"lon": "128.3923528",
+			"lat": "37.36791667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 16,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "홍천군",
+			"lon": "127.8908417",
+			"lat": "37.69442222"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 17,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "화천군",
+			"lon": "127.7103556",
+			"lat": "38.10340833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 18,
+		"fields": {
+			"do_si": "강원",
+			"sgg": "횡성군",
+			"lon": "127.9872222",
+			"lat": "37.48895833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 19,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "가평군",
+			"lon": "127.5117778",
+			"lat": "37.82883056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 20,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "강화군",
+			"lon": "126.49",
+			"lat": "37.74385833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 21,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "고양시",
+			"lon": "126.7770556",
+			"lat": "37.65590833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 22,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "과천시",
+			"lon": "126.9898",
+			"lat": "37.42637222"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 23,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "광명시",
+			"lon": "126.8667083",
+			"lat": "37.47575"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 24,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "광주시",
+			"lon": "127.2577861",
+			"lat": "37.41450556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 25,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "구리시",
+			"lon": "127.1318639",
+			"lat": "37.591625"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 26,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "군포시",
+			"lon": "126.9375",
+			"lat": "37.35865833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 27,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "김포시",
+			"lon": "126.7177778",
+			"lat": "37.61245833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 28,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "남양주시",
+			"lon": "127.2186333",
+			"lat": "37.63317778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 29,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "동두천시",
+			"lon": "127.0626528",
+			"lat": "37.90091667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 30,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "부천시",
+			"lon": "126.766",
+			"lat": "37.5035917"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 31,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "성남시",
+			"lon": "127.1477194",
+			"lat": "37.44749167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 32,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "수원시",
+			"lon": "127.0122222",
+			"lat": "37.30101111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 33,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "시흥시",
+			"lon": "126.8050778",
+			"lat": "37.37731944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 34,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "안산시",
+			"lon": "126.8468194",
+			"lat": "37.29851944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 35,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "안성시",
+			"lon": "127.2818444",
+			"lat": "37.005175"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 36,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "안양시",
+			"lon": "126.9533556",
+			"lat": "37.3897"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 37,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "양주시",
+			"lon": "127.0478194",
+			"lat": "37.78245"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 38,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "양평군",
+			"lon": "127.4898861",
+			"lat": "37.48893611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 39,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "여주군",
+			"lon": "127.652958",
+			"lat": "37.324606"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 40,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "여주시",
+			"lon": "127.6396222",
+			"lat": "37.29535833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 41,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "연천군",
+			"lon": "127.0770667",
+			"lat": "38.09336389"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 42,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "오산시",
+			"lon": "127.0796417",
+			"lat": "37.14691389"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 43,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "옹진군",
+			"lon": "126.6388889",
+			"lat": "37.443725"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 44,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "용인시",
+			"lon": "127.2038444",
+			"lat": "37.23147778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 45,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "의왕시",
+			"lon": "126.9703889",
+			"lat": "37.34195"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 46,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "의정부시",
+			"lon": "127.0358417",
+			"lat": "37.73528889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 47,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "이천시",
+			"lon": "127.4432194",
+			"lat": "37.27543611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 48,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "파주시",
+			"lon": "126.7819528",
+			"lat": "37.75708333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 49,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "평택시",
+			"lon": "127.1146556",
+			"lat": "36.98943889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 50,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "포천시",
+			"lon": "127.2024194",
+			"lat": "37.89215556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 51,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "하남시",
+			"lon": "127.217",
+			"lat": "37.53649722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 52,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "화성시",
+			"lon": "126.8335306",
+			"lat": "37.19681667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 53,
+		"fields": {
+			"do_si": "경기",
+			"sgg": "인천시",
+			"lon": "126.7059186",
+			"lat": "37.45617301"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 54,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "거제시",
+			"lon": "128.6233556",
+			"lat": "34.87735833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 55,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "거창군",
+			"lon": "127.9116556",
+			"lat": "35.683625"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 56,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "경산시",
+			"lon": "128.7434639",
+			"lat": "35.82208889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 57,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "경주시",
+			"lon": "129.2270222",
+			"lat": "35.85316944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 58,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "고령군",
+			"lon": "128.2650222",
+			"lat": "35.72298611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 59,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "고성군",
+			"lon": "128.3245417",
+			"lat": "34.9699"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 60,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "구미시",
+			"lon": "128.3467778",
+			"lat": "36.11655"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 61,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "군위군",
+			"lon": "128.5750778",
+			"lat": "36.23999722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 62,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "기장군",
+			"lon": "129.224475",
+			"lat": "35.24135"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 63,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "김천시",
+			"lon": "128.1158",
+			"lat": "36.13689722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 64,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "김해시",
+			"lon": "128.8916667",
+			"lat": "35.22550556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 65,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "남해군",
+			"lon": "127.8944667",
+			"lat": "34.83455833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 66,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "달성군",
+			"lon": "128.433275",
+			"lat": "35.77168056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 67,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "마산시",
+			"lon": "128.567863",
+			"lat": "35.196874"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 68,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "문경시",
+			"lon": "128.1890194",
+			"lat": "36.58363056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 69,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "밀양시",
+			"lon": "128.7489444",
+			"lat": "35.50077778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 70,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "봉화군",
+			"lon": "128.734875",
+			"lat": "36.89026111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 71,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "사천시",
+			"lon": "128.0667778",
+			"lat": "35.00028333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 72,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "산청군",
+			"lon": "127.8756194",
+			"lat": "35.41249167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 73,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "상주시",
+			"lon": "128.1612639",
+			"lat": "36.40796944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 74,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "성주군",
+			"lon": "128.2851528",
+			"lat": "35.91621111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 75,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "안동시",
+			"lon": "128.7316222",
+			"lat": "36.56546389"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 76,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "양산시",
+			"lon": "129.0394111",
+			"lat": "35.33192778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 77,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "영덕군",
+			"lon": "129.3683556",
+			"lat": "36.41210278"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 78,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "영양군",
+			"lon": "129.1146222",
+			"lat": "36.664275"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 79,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "영주시",
+			"lon": "128.6263444",
+			"lat": "36.80293611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 80,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "영천시",
+			"lon": "128.940775",
+			"lat": "35.97005278"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 81,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "예천군",
+			"lon": "128.4550222",
+			"lat": "36.65495"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 82,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "울릉군",
+			"lon": "130.9037889",
+			"lat": "37.480575"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 83,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "울주군",
+			"lon": "129.2971639",
+			"lat": "35.53073889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 84,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "울진군",
+			"lon": "129.4027861",
+			"lat": "36.99018611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 85,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "의령군",
+			"lon": "128.2638222",
+			"lat": "35.31911944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 86,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "의성군",
+			"lon": "128.6993639",
+			"lat": "36.34975833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 87,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "진주시",
+			"lon": "128.11",
+			"lat": "35.17703333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 88,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "진해시",
+			"lon": "128.710081",
+			"lat": "35.13306"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 89,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "창녕군",
+			"lon": "128.4945333",
+			"lat": "35.54153611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 90,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "창원시",
+			"lon": "128.6401544",
+			"lat": "35.2540033"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 91,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "청도군",
+			"lon": "128.7362",
+			"lat": "35.64431111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 92,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "청송군",
+			"lon": "129.0594",
+			"lat": "36.43329167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 93,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "칠곡군",
+			"lon": "128.4037972",
+			"lat": "35.99254722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 94,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "통영시",
+			"lon": "128.4352778",
+			"lat": "34.85125833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 95,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "포항시",
+			"lon": "129.3616667",
+			"lat": "36.00568611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 96,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "하동군",
+			"lon": "127.7534306",
+			"lat": "35.06420278"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 97,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "함안군",
+			"lon": "128.4087083",
+			"lat": "35.26940556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 98,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "함양군",
+			"lon": "127.7274194",
+			"lat": "35.51746944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 99,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "합천군",
+			"lon": "128.1679306",
+			"lat": "35.56361667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 100,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "부산시",
+			"lon": "129.075",
+			"lat": "35.1798"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 101,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "대구시",
+			"lon": "128.6017",
+			"lat": "35.8715"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 102,
+		"fields": {
+			"do_si": "경상",
+			"sgg": "울산시",
+			"lon": "129.3123",
+			"lat": "35.546"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 103,
+		"fields": {
+			"do_si": "광주시",
+			"sgg": "광산구",
+			"lon": "126.793668",
+			"lat": "35.13995836"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 104,
+		"fields": {
+			"do_si": "광주시",
+			"sgg": "남구",
+			"lon": "126.9025572",
+			"lat": "35.13301749"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 105,
+		"fields": {
+			"do_si": "광주시",
+			"sgg": "동구",
+			"lon": "126.9230903",
+			"lat": "35.14627776"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 106,
+		"fields": {
+			"do_si": "광주시",
+			"sgg": "북구",
+			"lon": "126.9010806",
+			"lat": "35.1812138"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 107,
+		"fields": {
+			"do_si": "광주시",
+			"sgg": "서구",
+			"lon": "126.8895063",
+			"lat": "35.1525164"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 108,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "달서구",
+			"lon": "128.5350639",
+			"lat": "35.82692778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 109,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "수성구",
+			"lon": "128.6328667",
+			"lat": "35.85520833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 110,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "남구",
+			"lon": "128.597702",
+			"lat": "35.84621351"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 111,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "달서구",
+			"lon": "128.5325905",
+			"lat": "35.82997744"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 112,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "달성군",
+			"lon": "128.4313995",
+			"lat": "35.77475029"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 113,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "동구",
+			"lon": "128.6355584",
+			"lat": "35.88682728"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 114,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "북구",
+			"lon": "128.5828924",
+			"lat": "35.8858646"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 115,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "서구",
+			"lon": "128.5591601",
+			"lat": "35.87194054"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 116,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "수성구",
+			"lon": "128.6307011",
+			"lat": "35.85835148"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 117,
+		"fields": {
+			"do_si": "대구시",
+			"sgg": "중구",
+			"lon": "128.6061745",
+			"lat": "35.86952722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 118,
+		"fields": {
+			"do_si": "대전시",
+			"sgg": "대덕구",
+			"lon": "127.4170933",
+			"lat": "36.35218384"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 119,
+		"fields": {
+			"do_si": "대전시",
+			"sgg": "동구",
+			"lon": "127.4548596",
+			"lat": "36.31204028"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 120,
+		"fields": {
+			"do_si": "대전시",
+			"sgg": "서구",
+			"lon": "127.3834158",
+			"lat": "36.35707299"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 121,
+		"fields": {
+			"do_si": "대전시",
+			"sgg": "유성구",
+			"lon": "127.3561363",
+			"lat": "36.36405586"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 122,
+		"fields": {
+			"do_si": "대전시",
+			"sgg": "중구",
+			"lon": "127.421381",
+			"lat": "36.32582989"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 123,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "강서구",
+			"lon": "128.9829083",
+			"lat": "35.20916389"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 124,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "금정구",
+			"lon": "129.0943194",
+			"lat": "35.24007778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 125,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "남구",
+			"lon": "129.0865",
+			"lat": "35.13340833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 126,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "동구",
+			"lon": "129.059175",
+			"lat": "35.13589444"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 127,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "동래구",
+			"lon": "129.0858556",
+			"lat": "35.20187222"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 128,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "부산진구",
+			"lon": "129.0553194",
+			"lat": "35.15995278"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 129,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "북구",
+			"lon": "128.992475",
+			"lat": "35.19418056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 130,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "사상구",
+			"lon": "128.9933333",
+			"lat": "35.14946667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 131,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "사하구",
+			"lon": "128.9770417",
+			"lat": "35.10142778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 132,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "서구",
+			"lon": "129.0263778",
+			"lat": "35.09483611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 133,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "수영구",
+			"lon": "129.115375",
+			"lat": "35.14246667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 134,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "연제구",
+			"lon": "129.082075",
+			"lat": "35.17318611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 135,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "영도구",
+			"lon": "129.0701861",
+			"lat": "35.08811667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 136,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "중구",
+			"lon": "129.0345083",
+			"lat": "35.10321667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 137,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "해운대구",
+			"lon": "129.1658083",
+			"lat": "35.16001944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 138,
+		"fields": {
+			"do_si": "부산시",
+			"sgg": "기장군",
+			"lon": "129.2222873",
+			"lat": "35.24477541"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 139,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "강남구",
+			"lon": "127.0495556",
+			"lat": "37.514575"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 140,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "강동구",
+			"lon": "127.1258639",
+			"lat": "37.52736667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 141,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "강북구",
+			"lon": "127.0277194",
+			"lat": "37.63695556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 142,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "강서구",
+			"lon": "126.851675",
+			"lat": "37.54815556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 143,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "관악구",
+			"lon": "126.9538444",
+			"lat": "37.47538611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 144,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "광진구",
+			"lon": "127.0845333",
+			"lat": "37.53573889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 145,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "구로구",
+			"lon": "126.8895972",
+			"lat": "37.49265"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 146,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "금천구",
+			"lon": "126.9041972",
+			"lat": "37.44910833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 147,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "노원구",
+			"lon": "127.0583889",
+			"lat": "37.65146111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 148,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "도봉구",
+			"lon": "127.0495222",
+			"lat": "37.66583333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 149,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "동대문구",
+			"lon": "127.0421417",
+			"lat": "37.571625"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 150,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "동작구",
+			"lon": "126.941575",
+			"lat": "37.50965556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 151,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "마포구",
+			"lon": "126.9105306",
+			"lat": "37.56070556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 152,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "서대문구",
+			"lon": "126.9388972",
+			"lat": "37.57636667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 153,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "서초구",
+			"lon": "127.0348111",
+			"lat": "37.48078611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 154,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "성동구",
+			"lon": "127.039",
+			"lat": "37.56061111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 155,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "성북구",
+			"lon": "127.0203333",
+			"lat": "37.58638333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 156,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "송파구",
+			"lon": "127.1079306",
+			"lat": "37.51175556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 157,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "양천구",
+			"lon": "126.8687083",
+			"lat": "37.51423056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 158,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "영등포구",
+			"lon": "126.8983417",
+			"lat": "37.52361111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 159,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "용산구",
+			"lon": "126.9675222",
+			"lat": "37.53609444"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 160,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "은평구",
+			"lon": "126.9312417",
+			"lat": "37.59996944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 161,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "종로구",
+			"lon": "126.9816417",
+			"lat": "37.57037778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 162,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "중구",
+			"lon": "126.9996417",
+			"lat": "37.56100278"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 163,
+		"fields": {
+			"do_si": "서울",
+			"sgg": "중랑구",
+			"lon": "127.0947778",
+			"lat": "37.60380556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 164,
+		"fields": {
+			"do_si": "울산시",
+			"sgg": "남구",
+			"lon": "129.3301754",
+			"lat": "35.54404265"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 165,
+		"fields": {
+			"do_si": "울산시",
+			"sgg": "동구",
+			"lon": "129.4166919",
+			"lat": "35.50516996"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 166,
+		"fields": {
+			"do_si": "울산시",
+			"sgg": "북구",
+			"lon": "129.361245",
+			"lat": "35.58270783"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 167,
+		"fields": {
+			"do_si": "울산시",
+			"sgg": "울주군",
+			"lon": "129.2424748",
+			"lat": "35.52230648"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 168,
+		"fields": {
+			"do_si": "울산시",
+			"sgg": "중구",
+			"lon": "129.3328162",
+			"lat": "35.56971228"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 169,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "강화군",
+			"lon": "126.4878417",
+			"lat": "37.74692907"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 170,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "계양구",
+			"lon": "126.737744",
+			"lat": "37.53770728"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 171,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "남구",
+			"lon": "126.6502972",
+			"lat": "37.46369169"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 172,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "남동구",
+			"lon": "126.7309669",
+			"lat": "37.44971062"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 173,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "동구",
+			"lon": "126.6432441",
+			"lat": "37.47401607"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 174,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "미추홀구",
+			"lon": "126.6502972",
+			"lat": "37.46369169"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 175,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "부평구",
+			"lon": "126.7219068",
+			"lat": "37.50784204"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 176,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "서구",
+			"lon": "126.6759616",
+			"lat": "37.54546372"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 177,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "연수구",
+			"lon": "126.6782658",
+			"lat": "37.41038125"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 178,
+		"fields": {
+			"do_si": "인천시",
+			"sgg": "중구",
+			"lon": "126.6217617",
+			"lat": "37.47384843"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 179,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "강진군",
+			"lon": "126.7691972",
+			"lat": "34.63891111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 180,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "고창군",
+			"lon": "126.7041083",
+			"lat": "35.43273889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 181,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "고흥군",
+			"lon": "127.2870556",
+			"lat": "34.60806944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 182,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "곡성군",
+			"lon": "127.2941083",
+			"lat": "35.27895556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 183,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "광양시",
+			"lon": "127.6981778",
+			"lat": "34.93753611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 184,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "구례군",
+			"lon": "127.4649333",
+			"lat": "35.19945833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 185,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "군산시",
+			"lon": "126.7388444",
+			"lat": "35.96464167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 186,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "김제시",
+			"lon": "126.8827528",
+			"lat": "35.800575"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 187,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "나주시",
+			"lon": "126.7128667",
+			"lat": "35.01283889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 188,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "남원시",
+			"lon": "127.3925",
+			"lat": "35.41325556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 189,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "담양군",
+			"lon": "126.9901639",
+			"lat": "35.318125"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 190,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "목포시",
+			"lon": "126.3944194",
+			"lat": "34.80878889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 191,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "무안군",
+			"lon": "126.4837",
+			"lat": "34.98736944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 192,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "무주군",
+			"lon": "127.6628667",
+			"lat": "36.00382778"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 193,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "보성군",
+			"lon": "127.0820889",
+			"lat": "34.76833333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 194,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "부안군",
+			"lon": "126.7356778",
+			"lat": "35.72853333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 195,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "순창군",
+			"lon": "127.1396306",
+			"lat": "35.37138889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 196,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "순천시",
+			"lon": "127.4893306",
+			"lat": "34.94760556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 197,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "신안군",
+			"lon": "126.3817306",
+			"lat": "34.78981111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 198,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "여수시",
+			"lon": "127.6643861",
+			"lat": "34.75731111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 199,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "영광군",
+			"lon": "126.5140861",
+			"lat": "35.27416667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 200,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "영암군",
+			"lon": "126.6986194",
+			"lat": "34.79698889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 201,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "완도군",
+			"lon": "126.7570972",
+			"lat": "34.30785278"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 202,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "완주군",
+			"lon": "127.1495972",
+			"lat": "35.84296944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 203,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "익산시",
+			"lon": "126.9598528",
+			"lat": "35.945275"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 204,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "임실군",
+			"lon": "127.2847528",
+			"lat": "35.60806389"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 205,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "장성군",
+			"lon": "126.786975",
+			"lat": "35.29881111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 206,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "장수군",
+			"lon": "127.5233",
+			"lat": "35.64429722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 207,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "장흥군",
+			"lon": "126.9091083",
+			"lat": "34.678525"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 208,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "전주시",
+			"lon": "127.1219194",
+			"lat": "35.80918889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 209,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "정읍시",
+			"lon": "126.8581111",
+			"lat": "35.56687222"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 210,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "진도군",
+			"lon": "126.2655444",
+			"lat": "34.48375"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 211,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "진안군",
+			"lon": "127.4269667",
+			"lat": "35.78871944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 212,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "함평군",
+			"lon": "126.5186194",
+			"lat": "35.06274444"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 213,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "해남군",
+			"lon": "126.6012889",
+			"lat": "34.57043611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 214,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "화순군",
+			"lon": "126.9885667",
+			"lat": "35.06148056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 215,
+		"fields": {
+			"do_si": "전라",
+			"sgg": "광주시",
+			"lon": "127.2551569",
+			"lat": "37.42949814"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 216,
+		"fields": {
+			"do_si": "제주",
+			"sgg": "서귀포시",
+			"lon": "126.5125556",
+			"lat": "33.25235"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 217,
+		"fields": {
+			"do_si": "제주",
+			"sgg": "제주시",
+			"lon": "126.5332083",
+			"lat": "33.49631111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 218,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "갈매로",
+			"lon": "128.6035528",
+			"lat": "35.86854167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 219,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "계룡시",
+			"lon": "127.2509306",
+			"lat": "36.27183611"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 220,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "고운동",
+			"lon": "127.236112",
+			"lat": "36.519901"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 221,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "공주시",
+			"lon": "127.1211194",
+			"lat": "36.44361389"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 222,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "괴산군",
+			"lon": "127.7888306",
+			"lat": "36.81243056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 223,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "국책연구원1로",
+			"lon": "127.29562",
+			"lat": "36.488994"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 224,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "금남면",
+			"lon": "127.28035",
+			"lat": "36.463826"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 225,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "금산군",
+			"lon": "127.4903083",
+			"lat": "36.10586944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 226,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "나리1로",
+			"lon": "126.613277",
+			"lat": "36.891878"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 227,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "나리로",
+			"lon": "126.613277",
+			"lat": "36.891878"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 228,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "남세종로",
+			"lon": "127.289448",
+			"lat": "36.479522"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 229,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "노을3로",
+			"lon": "127.258565",
+			"lat": "36.47944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 230,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "논산시",
+			"lon": "127.1009111",
+			"lat": "36.18420278"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 231,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "누리로",
+			"lon": "127.252375",
+			"lat": "36.475097"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 232,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "다솜1로",
+			"lon": "127.254501",
+			"lat": "36.516156"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 233,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "다정남로",
+			"lon": "127.241922",
+			"lat": "36.493402"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 234,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "다정동",
+			"lon": "127.234917",
+			"lat": "36.500442"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 235,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "다정북로",
+			"lon": "127.255849",
+			"lat": "36.49573"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 236,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "다정중앙로",
+			"lon": "127.246898",
+			"lat": "36.496682"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 237,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "단양군",
+			"lon": "128.3678417",
+			"lat": "36.98178056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 238,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "달빛1로",
+			"lon": "127.2463",
+			"lat": "36.509374"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 239,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "달빛로",
+			"lon": "127.25066",
+			"lat": "36.508065"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 240,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "당진군",
+			"lon": "127.684597",
+			"lat": "36.881997"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 241,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "당진시",
+			"lon": "126.6302528",
+			"lat": "36.89075"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 242,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "대평로",
+			"lon": "127.282581",
+			"lat": "36.469407"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 243,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "도담동",
+			"lon": "127.2623972",
+			"lat": "36.51731111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 244,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "도움1로",
+			"lon": "127.247611",
+			"lat": "36.502796"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 245,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "도움3로",
+			"lon": "127.249982",
+			"lat": "36.504689"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 246,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "마음로",
+			"lon": "127.232222",
+			"lat": "36.518492"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 247,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "마음안1로",
+			"lon": "127.236121",
+			"lat": "36.517357"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 248,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "마음안로",
+			"lon": "127.236121",
+			"lat": "36.517357"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 249,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "만남로",
+			"lon": "127.160304",
+			"lat": "36.822626"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 250,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보듬2로",
+			"lon": "127.265305",
+			"lat": "36.51288"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 251,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보듬3로",
+			"lon": "127.265305",
+			"lat": "36.51288"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 252,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보듬4로",
+			"lon": "127.265305",
+			"lat": "36.51288"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 253,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보람동",
+			"lon": "127.28094",
+			"lat": "36.478112"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 254,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보람동로",
+			"lon": "127.28094",
+			"lat": "36.478112"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 255,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보람로",
+			"lon": "127.28094",
+			"lat": "36.478112"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 256,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보령시",
+			"lon": "126.6148861",
+			"lat": "36.330575"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 257,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "보은군",
+			"lon": "127.7316083",
+			"lat": "36.48653333"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 258,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "부강면",
+			"lon": "127.370376",
+			"lat": "36.527112"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 259,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "부여군",
+			"lon": "126.9118639",
+			"lat": "36.27282222"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 260,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "새롬남로",
+			"lon": "127.254403",
+			"lat": "36.479121"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 261,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "새롬동",
+			"lon": "127.254403",
+			"lat": "36.479121"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 262,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "새롬북로",
+			"lon": "127.254403",
+			"lat": "36.479121"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 263,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "새롬중앙로",
+			"lon": "127.254403",
+			"lat": "36.479121"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 264,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "서산시",
+			"lon": "126.4521639",
+			"lat": "36.78209722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 265,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "서천군",
+			"lon": "126.6938889",
+			"lat": "36.07740556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 266,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "소담동",
+			"lon": "127.3000509",
+			"lat": "36.488897"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 267,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "소정면",
+			"lon": "127.1582525",
+			"lat": "36.7223175"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 268,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "시청대로",
+			"lon": "127.296956",
+			"lat": "36.484202"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 269,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "아름동",
+			"lon": "127.2482222",
+			"lat": "36.51204167"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 270,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "아산시",
+			"lon": "127.0046417",
+			"lat": "36.78710556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 271,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "연기군",
+			"lon": "127.282781",
+			"lat": "36.474616"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 272,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "연기면",
+			"lon": "127.2737741",
+			"lat": "36.5418737"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 273,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "연동면",
+			"lon": "127.3268658",
+			"lat": "36.5590889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 274,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "연서면",
+			"lon": "127.2716217",
+			"lat": "36.592587"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 275,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "영동군",
+			"lon": "127.7856111",
+			"lat": "36.17205833"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 276,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "예산군",
+			"lon": "126.850875",
+			"lat": "36.67980556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 277,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "옥천군",
+			"lon": "127.5736333",
+			"lat": "36.30355"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 278,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "음성군",
+			"lon": "127.6926222",
+			"lat": "36.93740556"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 279,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "장군면",
+			"lon": "127.2056006",
+			"lat": "36.4967934"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 280,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "전의면",
+			"lon": "127.1955125",
+			"lat": "36.6812513"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 281,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "절재로",
+			"lon": "127.262509",
+			"lat": "36.50843"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 282,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "제천시",
+			"lon": "128.1931528",
+			"lat": "37.12976944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 283,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "조치원읍",
+			"lon": "127.298399",
+			"lat": "36.604528"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 284,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "종촌동",
+			"lon": "127.247612",
+			"lat": "36.5119569"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 285,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "증평군",
+			"lon": "127.5832889",
+			"lat": "36.78218056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 286,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "진천군",
+			"lon": "127.4376444",
+			"lat": "36.85253889"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 287,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "천안시",
+			"lon": "127.1524667",
+			"lat": "36.804125"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 288,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "청양군",
+			"lon": "126.8042556",
+			"lat": "36.45626944"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 289,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "청원군",
+			"lon": "127.431119",
+			"lat": "36.549748"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 290,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "청주시",
+			"lon": "127.5117306",
+			"lat": "36.58399722"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 291,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "충주시",
+			"lon": "127.9281444",
+			"lat": "36.98818056"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 292,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "태안군",
+			"lon": "126.299975",
+			"lat": "36.74266667"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 293,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "한누리대로",
+			"lon": "127.289926",
+			"lat": "36.48545"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 294,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "홍성군",
+			"lon": "126.6629083",
+			"lat": "36.59836111"
+		}
+	},
+	{
+		"models": "raw.location",
+		"pk": 295,
+		"fields": {
+			"do_si": "충청",
+			"sgg": "대전시",
+			"lon": "127.3848616",
+			"lat": "36.3506295"
+		}
+	}
+]
