@@ -7,6 +7,9 @@ from .models import User
 
 
 class SignupSerializer(serializers.ModelSerializer):
+    user_lat = serializers.FloatField(write_only=True, required=False)
+    user_lon = serializers.FloatField(write_only=True, required=False)
+
     class Meta:
         model = User
         fields = (
@@ -14,12 +17,21 @@ class SignupSerializer(serializers.ModelSerializer):
             "username",
             "email",
             "password",
+            "user_lat",
+            "user_lon",
         )
 
     def create(self, validated_data):
         password = validated_data.pop("password")
+        user_lat = validated_data.pop("user_lat", None)
+        user_lon = validated_data.pop("user_lon", None)
         hashed_password = make_password(password)
-        user = User.objects.create(password=hashed_password, **validated_data)
+        user = User.objects.create(
+            password=hashed_password,
+            user_lat=user_lat,
+            user_lon=user_lon,
+            **validated_data,
+        )
         return user
 
     def validate_password(self, password):
@@ -51,13 +63,6 @@ class MyPageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = "__all__"
-        # fields = (
-        #     "pk",
-        #     "username",
-        #     "email",
-        #     # "is_recommend",
-        #     # "user_lon",
-        #     # "user_lat",
-        # )
+        # fields = "__all__"
         read_only_fields = ("pk",)
+        exclude = ("is_superuser", "is_staff", "groups", "user_permissions")
