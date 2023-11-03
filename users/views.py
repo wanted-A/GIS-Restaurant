@@ -8,7 +8,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 
 from .location_data import get_location_data
-from .serializers import SignupSerializer, LoginSerializer, MyPageSerializer
+from .serializers import SignupSerializer
 
 
 class SignupView(APIView):
@@ -34,6 +34,7 @@ class SignupView(APIView):
                         "username": user.username,
                         "email": user.email,
                         "message": "회원가입 성공!",
+                        "is_recommend": user.is_recommend,
                         "user_lat": user.user_lat,
                         "user_lon": user.user_lon,
                     },
