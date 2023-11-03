@@ -11,9 +11,6 @@ from .location_data import get_location_data
 from .serializers import SignupSerializer, LoginSerializer, MyPageSerializer
 
 
-from .serializers import SignupSerializer, LoginSerializer, MyPageSerializer
-
-
 class SignupView(APIView):
     """
     POST:회원가입
@@ -155,6 +152,7 @@ class LogoutView(APIView):
 
         logout(request)
         return response
+
 
 
 class MyPageView(APIView):
