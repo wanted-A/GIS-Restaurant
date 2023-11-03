@@ -177,3 +177,8 @@ class MyPageView(APIView):
                 MyPageSerializer(updated_info).data, status=status.HTTP_200_OK
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request):
+        user = request.user
+        user.delete()
+        return Response({"message": "계정이 삭제되었습니다."}, status=status.HTTP_204_NO_CONTENT)
