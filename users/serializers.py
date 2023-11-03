@@ -51,13 +51,6 @@ class MyPageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = "__all__"
-        # fields = (
-        #     "pk",
-        #     "username",
-        #     "email",
-        #     # "is_recommend",
-        #     # "user_lon",
-        #     # "user_lat",
-        # )
+        # fields = "__all__"
         read_only_fields = ("pk",)
+        exclude = ("is_superuser", "is_staff", "groups", "user_permissions")
