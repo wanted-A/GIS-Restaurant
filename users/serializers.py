@@ -53,4 +53,4 @@ class MyPageSerializer(serializers.ModelSerializer):
         model = User
         # fields = "__all__"
         read_only_fields = ("pk",)
-        exclude = ("is_superuser", "is_staff", "groups", "user_permissions")
+        exclude = ("is_superuser", "is_staff", "is_admin", "groups", "user_permissions")
