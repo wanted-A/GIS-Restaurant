@@ -1,7 +1,0 @@
-{
-    "python.analysis.extraPaths": [
-        "./data"
-    ],
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "basic"
-}
