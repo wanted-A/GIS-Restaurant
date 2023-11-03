@@ -19,6 +19,8 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.0
 idna==3.4
 kombu==5.3.2
+numpy==1.26.1
+pandas==2.1.2
 prompt-toolkit==3.0.39
 PyJWT==2.8.0
 python-crontab==3.0.0

@@ -5,16 +5,23 @@ from celery import shared_task
 from rest_framework import status
 
 from config.settings import env
-from config.celery import app
-from .models import RawData
-from .serializers import RawDataSerializer
+from restaurants.models import RawData
+from restaurants.serializers import RawDataSerializer
 
 import requests
 import json
 import re
 
 
-business_type_list = [
+# OPEN API 사용시 참고사항
+# 1. response 자체는 리스트
+# 2. response[0]은 'head'라는 키 값을 갖는 딕셔너리
+# 3. 예) {'head': [{'list_total_count': 16}, {'RESULT': {'CODE': 'INFO-000', 'MESSAGE': '정상 처리되었습니다.'}}, {'api_version': '1.0'}]}
+# 4. response[1]은 'row'라는 키 값을 갖는 딕셔너리
+# 5. 예) {'row': [{'SIGUN_NM': '평택시', 'SIGUN_CD': '41220', 'BIZPLC_NM': '(주)비앤비', 'LICENSG_DE': '20120823', 'BSN_STATE_NM': '폐업', 'CLSBIZ_DE': '20130401', 'LOCPLC_AR': None, 'GRAD_FACLT_DIV_NM': '상수도전용', 'MALE_ENFLPSN_CNT': None, 'YY': None, 'MULTI_USE_BIZESTBL_YN': 'N', 'GRAD_DIV_NM': None, 'TOT_FACLT_SCALE': None, 'FEMALE_ENFLPSN_CNT': None, 'BSNSITE_CIRCUMFR_DIV_NM': '기타', 'SANITTN_INDUTYPE_NM': None, 'SANITTN_BIZCOND_NM': '이동조리', 'TOT_EMPLY_CNT': None, 'REFINE_LOTNO_ADDR': '경기도 평택시 오성면 죽리 19번지', 'REFINE_ROADNM_ADDR': '경기도 평택시 오성면 서동대로 2064-1', 'REFINE_ZIP_CD': '17926', 'REFINE_WGS84_LOGT': '126.9725130', 'REFINE_WGS84_LAT': '37.0065480'}
+
+
+BUISINESS_TYPE = [
     "Genrestrtmovmntcook",  # 이동조리
     "Genrestrtcate",  # 까페
     "Genrestrtlunch",  # 김밥/도시락
@@ -22,6 +29,7 @@ business_type_list = [
 
 
 # 총 데이터 갯수를 수집하여 반환하는 함수
+@shared_task
 def get_count(business_type):
     url = f"https://openapi.gg.go.kr/{business_type}"
 
@@ -44,6 +52,7 @@ def get_count(business_type):
 
 
 # 실제 미가공 데이터를 수집하여 반환하는 함수
+@shared_task
 def get_row(params, business_type):
     url = f"https://openapi.gg.go.kr/{business_type}"
 
@@ -57,6 +66,7 @@ def get_row(params, business_type):
 
 
 # 데이터 전처리하는 함수
+@shared_task
 def preprocess_data(raw_data):
     # 미가공 데이터(dict)를 받아 None 여부 확인하고 기본값 설정하는 함수
     def get_value_or_default(key, default_value):
@@ -148,6 +158,7 @@ def preprocess_data(raw_data):
 
 
 # 전처리된 데이터를 실제 저장하는 함수
+@shared_task
 def save_raw_data(total_list, page):
     for raw_data in total_list:
         if RawData.objects.filter(
@@ -171,9 +182,10 @@ def save_raw_data(total_list, page):
 
 
 # 페이지별로 데이터 저장을 요청하는 함수
+# celery 미적용시: 0:03:29.111738
 @shared_task
 def raw_data_handler():
-    for business_type in business_type_list:
+    for business_type in BUISINESS_TYPE:
         list_total_count = get_count(business_type)
 
         for i in range((list_total_count // 100) + 1):

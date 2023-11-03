@@ -1,3 +1,4 @@
+from celery.schedules import crontab
 from pathlib import Path
 import os
 import environ
@@ -169,9 +170,17 @@ SIMPLE_JWT = {
 }
 
 # Celery
-CELERY_TIMEZONE = "Asia/Seoul"
 CELERY_BROKER_URL = "amqp://localhost:5672"
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
+# Celery-beat
+CELERY_TIMEZONE = "Asia/Seoul"
+CELERY_ENABLE_UTC = False
+CELERY_BEAT_SCHEDULE = {
+    "test": {
+        "task": "config.tasks.raw_data_handler",
+        "schedule": crontab(minute="*/5"),  # 5분마다 실행
+    }
+}
