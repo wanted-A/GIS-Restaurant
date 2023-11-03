@@ -33,7 +33,7 @@ class SignupView(APIView):
                         "pk": user.pk,
                         "username": user.username,
                         "email": user.email,
-                        "message": "회원가입 성공",
+                        "message": "회원가입 성공!",
                         "user_lat": user.user_lat,
                         "user_lon": user.user_lon,
                     },
@@ -45,4 +45,3 @@ class SignupView(APIView):
                     status=status.HTTP_503_SERVICE_UNAVAILABLE,
                 )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
