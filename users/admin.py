@@ -56,11 +56,13 @@ class UserAdmin(admin.ModelAdmin):
         "id",
         "username",
         "email",
-        # "user_lat", #위도
-        # "user_lon", #경도
+        # "user_lat",  # 위도
+        # "user_lon",  # 경도
     )
     list_filter = (
         "is_recommend",  # 점심추천여부
         "user_lat",  # 위도
         "user_lon",  # 경도
     )
+
+    readonly_fields = ("last_login", "date_joined", "user_lat", "user_lon")

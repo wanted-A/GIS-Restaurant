@@ -10,7 +10,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = ["email"]
-    
+
     user_lat = models.FloatField(null=True, blank=True)  # 위도
     user_lon = models.FloatField(null=True, blank=True)  # 경도
     is_recommend = models.BooleanField(default=True, blank=True)  # 추천여부
