@@ -125,6 +125,7 @@ USE_L10N = True
 
 USE_TZ = True  # True로 설정해야 jwt token 시간이 장고 시간과 일치함
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -167,6 +168,7 @@ SIMPLE_JWT = {
     "TOKEN_BLACKLIST_ENABLED": True,
     "TOKEN_BLACKLIST_APP": "rest_framework_simplejwt.token_blacklist",
 }
+
 
 # session
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True  # 비밀번호 지워지지않음
