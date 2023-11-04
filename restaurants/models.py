@@ -37,6 +37,7 @@ class Restaurant(models.Model):
     clean_business_type = models.CharField(
         max_length=128, blank=True, null=True, verbose_name="위생업태명"
     )
+
     total_worker_count = models.FloatField(default=0, verbose_name="총종업원수")
     road_address = models.CharField(max_length=128, verbose_name="소재지도로명주소")
     lot_num_address = models.CharField(max_length=128, verbose_name="소재지지번주소")

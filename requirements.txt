@@ -1,5 +1,6 @@
 amqp==5.1.1
 asgiref==3.7.2
+
 billiard==4.1.0
 celery==5.3.4
 certifi==2023.7.22
@@ -24,7 +25,6 @@ pandas==2.1.2
 prompt-toolkit==3.0.39
 PyJWT==2.8.0
 python-crontab==3.0.0
-python-dateutil==2.8.2
 python-dateutil==2.8.2
 python-dotenv==1.0.0
 pytz==2023.3.post1
