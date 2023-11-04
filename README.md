@@ -10,7 +10,7 @@
 - [개요](#개요)
 - [Skills](#Skills)
 - [Installation](#Installation)
-- [API Documents](#API-documents)
+- [API Documents](#API-Documents)
 - [프로젝트 및 이슈관리](#프로젝트-및-이슈-관리)
 - [Authors](#Authors)
 - [References](#References)
