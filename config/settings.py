@@ -180,7 +180,7 @@ CELERY_TIMEZONE = "Asia/Seoul"
 CELERY_ENABLE_UTC = False
 CELERY_BEAT_SCHEDULE = {
     "test": {
-        "task": "config.tasks.raw_data_handler",
+        "task": "restaurants.tasks.raw_data_handler",
         "schedule": crontab(minute="*/5"),  # 5분마다 실행
     }
 }
