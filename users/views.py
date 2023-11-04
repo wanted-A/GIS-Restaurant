@@ -11,9 +11,10 @@ from .location_data import get_location_data
 from .serializers import SignupSerializer, LoginSerializer, MyPageSerializer
 
 
+# /api/v1/users/signup/
 class SignupView(APIView):
     """
-    POST:회원가입
+    POST : 회원가입
     """
 
     def get(self, request):
@@ -48,9 +49,10 @@ class SignupView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# /api/v1/users/login/
 class LoginView(APIView):
     """
-    POST: 로그인
+    POST : 로그인
     """
 
     def get(self, request):
@@ -112,9 +114,10 @@ class LoginView(APIView):
         )
 
 
+# /api/v1/users/logout/
 class LogoutView(APIView):
     """
-    로그아웃
+    POST : 로그아웃
     """
 
     permission_classes = [IsAuthenticated]
@@ -155,7 +158,14 @@ class LogoutView(APIView):
         return response
 
 
+# /api/v1/users/mypage/
 class MyPageView(APIView):
+    """
+    GET : 마이페이지 조회
+    PUT : 마이페이지 수정
+    DELETE : 회원탈퇴
+    """
+
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
