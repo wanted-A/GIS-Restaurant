@@ -25,6 +25,8 @@ prompt-toolkit==3.0.39
 PyJWT==2.8.0
 python-crontab==3.0.0
 python-dateutil==2.8.2
+python-dateutil==2.8.2
+python-dotenv==1.0.0
 pytz==2023.3.post1
 redis==5.0.1
 requests==2.31.0
@@ -34,3 +36,6 @@ tzdata==2023.3
 urllib3==2.0.7
 vine==5.0.0
 wcwidth==0.2.9
+typing_extensions==4.8.0
+tzdata==2023.3
+urllib3==2.0.7
