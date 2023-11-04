@@ -1,5 +1,5 @@
 ## 반영 브랜치
-ex) feat/login -> dev
+ex) feature/닉네임/#nn -> develop
 
 ## 변경 사항
 ex) 로그인 시, 구글 소셜 로그인 기능을 추가했습니다.
