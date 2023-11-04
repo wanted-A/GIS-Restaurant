@@ -11,8 +11,9 @@ class UserAdmin(admin.ModelAdmin):
                 "fields": (
                     "username",
                     "email",
-                    # "user_lat", #위도
-                    # "user_lon", #경도
+                    "is_recommend",  # 점심 추천 여부
+                    "user_lat",  # 위도
+                    "user_lon",  # 경도
                 ),
                 "classes": ("wide",),
             },
@@ -38,15 +39,16 @@ class UserAdmin(admin.ModelAdmin):
             },
         ),
     )
-    
+
     readonly_fields = ("last_login", "date_joined")
 
     list_display = (
         "id",
         "username",
         "email",
-        # "user_lat", #위도
-        # "user_lon", #경도
+        "user_lat",  # 위도
+        "user_lon",  # 경도
+        "is_recommend",
         "is_active",
         "is_admin",
     )
@@ -54,12 +56,13 @@ class UserAdmin(admin.ModelAdmin):
         "id",
         "username",
         "email",
-        # "user_lat", #위도
-        # "user_lon", #경도
+        # "user_lat",  # 위도
+        # "user_lon",  # 경도
     )
     list_filter = (
-        "is_active",
-        "is_admin",
-        # "user_lat", #위도
-        # "user_lon", #경도
+        "is_recommend",
+        "user_lat",  # 위도
+        "user_lon",  # 경도
     )
+
+    readonly_fields = ("last_login", "date_joined", "user_lat", "user_lon")
