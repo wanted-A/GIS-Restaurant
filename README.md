@@ -11,7 +11,7 @@
 - [Skills](#Skills)
 - [Installation](#Installation)
 - [API Documents](#API-Documents)
-- [프로젝트 및 이슈관리](#프로젝트-및-이슈-관리)
+- [프로젝트 및 이슈관리](#프로젝트-및-이슈관리)
 - [Authors](#Authors)
 - [References](#References)
 
