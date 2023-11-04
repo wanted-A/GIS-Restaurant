@@ -1,8 +1,10 @@
+from celery.schedules import crontab
 from pathlib import Path
 import os
 import environ
 from datetime import timedelta
-import my_settings
+
+# import my_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -25,6 +27,8 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
+    "django_celery_beat",
+    "django_celery_results",
 ]
 
 CUSTOM_APPS = [
@@ -119,8 +123,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+USE_TZ = True  # True로 설정해야 jwt token 시간이 장고 시간과 일치함
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -163,4 +166,27 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
     "TOKEN_BLACKLIST_ENABLED": True,
     "TOKEN_BLACKLIST_APP": "rest_framework_simplejwt.token_blacklist",
+}
+
+# session
+ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True  # 비밀번호 지워지지않음
+ACCOUNT_SESSION_REMEMBER = True  # 로그인 상태 유지
+SESSION_COOKIE_AGE = 3600  # 쿠기 유효기간 1시간
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # 브라우저를 닫아도 세션기록 유지!
+
+
+# Celery
+CELERY_BROKER_URL = "amqp://localhost:5672"
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+# Celery-beat
+CELERY_TIMEZONE = "Asia/Seoul"
+CELERY_ENABLE_UTC = False
+CELERY_BEAT_SCHEDULE = {
+    "test": {
+        "task": "restaurants.tasks.raw_data_handler",
+        "schedule": crontab(minute="*/5"),  # 5분마다 실행
+    }
 }

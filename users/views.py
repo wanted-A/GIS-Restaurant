@@ -21,31 +21,30 @@ class SignupView(APIView):
 
     def post(self, request):
         serializer = SignupSerializer(data=request.data)
-
         if serializer.is_valid():
-            user = serializer.save()
-            user.save()
-
-            # simple jwt 발급
-            token = TokenObtainPairSerializer.get_token(user)
-            refresh_token = str(token)
-            access_token = str(token.access_token)
-
-            res = Response(
-                {
-                    "user_pk": user.pk,
-                    "username": user.username,
-                    "email": user.email,
-                    "message": "회원가입 성공",
-                    "token": {
-                        "access": str(access_token),
-                        "refresh": str(refresh_token),
+            location_data = get_location_data()
+            if location_data:
+                user = serializer.save(
+                    user_lat=location_data["location"]["lat"],
+                    user_lon=location_data["location"]["lng"],
+                )
+                return Response(
+                    {
+                        "pk": user.pk,
+                        "username": user.username,
+                        "email": user.email,
+                        "message": "회원가입 성공!",
+                        "is_recommend": user.is_recommend,
+                        "user_lat": user.user_lat,
+                        "user_lon": user.user_lon,
                     },
-                },
-                status=status.HTTP_201_CREATED,
-            )
-
-            return res
+                    status=status.HTTP_201_CREATED,
+                )
+            else:
+                return Response(
+                    {"message": "위치 정보를 가져올 수 없습니다."},
+                    status=status.HTTP_503_SERVICE_UNAVAILABLE,
+                )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -92,7 +91,7 @@ class LoginView(APIView):
                     "user_pk": user.pk,
                     "username": user.username,
                     "email": user.email,
-                    "message": "로그인 성공",
+                    "message": "로그인 성공!",
                     "user_lat": user.user_lat,
                     "user_lon": user.user_lon,
                     "token": {
@@ -143,6 +142,8 @@ class LogoutView(APIView):
             # 이미 블랙리스트에 있는 토큰일 경우 예외 발생
             except Exception as e:
                 print(e)
+
+                # superuser일 경우 토큰이 없기 때문에 예외는 주석처리
         #         return Response(
         #             {"message": "로그아웃 처리 중 오류가 발생했습니다."},
         #             status=status.HTTP_400_BAD_REQUEST,
@@ -152,7 +153,6 @@ class LogoutView(APIView):
 
         logout(request)
         return response
-
 
 
 class MyPageView(APIView):
