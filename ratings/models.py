@@ -9,3 +9,14 @@ class Rating(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name="restaurant_ratings", blank=False)
     score = models.FloatField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
     content = models.TextField(max_length=255, blank=True, null=True)
+
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        null=True,
+        blank=True,
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        null=True,
+        blank=True,
+    )
