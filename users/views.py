@@ -4,12 +4,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
-from rest_framework.exceptions import NotFound, PermissionDenied, ValidationError
 
-
+from .location_data import get_location_data
 from .serializers import SignupSerializer, LoginSerializer, MyPageSerializer
 
 
@@ -23,7 +21,6 @@ class SignupView(APIView):
 
     def post(self, request):
         serializer = SignupSerializer(data=request.data)
-
         if serializer.is_valid():
             user = serializer.save()
             user.save()
@@ -56,6 +53,11 @@ class LoginView(APIView):
     POST: 로그인
     """
 
+    def get(self, request):
+        return Response(
+            {"message": "username, password를 입력해주세요."}, status=status.HTTP_200_OK
+        )
+
     def post(self, request):
         username = request.data.get("username")
         password = request.data.get("password")
@@ -69,10 +71,18 @@ class LoginView(APIView):
         user = authenticate(username=username, password=password)
 
         if user is not None:
+            location_data = get_location_data()
+            if location_data:
+                user.user_lat = location_data["location"]["lat"]
+                user.user_lon = location_data["location"]["lng"]
+                user.save(update_fields=["user_lat", "user_lon"])  # 위도, 경도만 업데이트
+
             login(request, user)
+
             serializer = LoginSerializer(user)
 
-            token = RefreshToken.for_user(user)
+            # simplejwt 토큰 발급
+            token = TokenObtainPairSerializer.get_token(user)
             access_token = str(token.access_token)
             refresh_token = str(token)
 
@@ -82,9 +92,11 @@ class LoginView(APIView):
                     "username": user.username,
                     "email": user.email,
                     "message": "로그인 성공",
+                    "user_lat": user.user_lat,
+                    "user_lon": user.user_lon,
                     "token": {
-                        "access": str(access_token),
-                        "refresh": str(refresh_token),
+                        "access": access_token,
+                        "refresh": refresh_token,
                     },
                 },
                 status=status.HTTP_200_OK,
@@ -101,28 +113,45 @@ class LoginView(APIView):
 
 
 class LogoutView(APIView):
+    """
+    로그아웃
+    """
+
     permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        return Response({"message": "로그아웃 페이지 입니다."})
+
     def post(self, request):
+        # 쿠키에서 access 토큰 삭제
+        response = Response({"message": "로그아웃 성공"}, status=status.HTTP_200_OK)
+        response.delete_cookie("access")
+
+        # 세션에서 refresh 토큰 가져오기
+        refresh_token = request.session.get("refresh")
+
+        # refresh 토큰이 있으면 블랙리스트에 추가
+        if refresh_token:
+            try:
+                token = RefreshToken(refresh_token)
+                token.blacklist()
+
+                # 세션에서 refresh 토큰 삭제
+                del request.session["refresh"]
+
+            # 이미 블랙리스트에 있는 토큰일 경우 예외 발생
+            except Exception as e:
+                print(e)
+        #         return Response(
+        #             {"message": "로그아웃 처리 중 오류가 발생했습니다."},
+        #             status=status.HTTP_400_BAD_REQUEST,
+        #         )
+        # else:
+        #     return Response({"message": "로그아웃 실패"}, status=status.HTTP_400_BAD_REQUEST)
+
         logout(request)
-        try:
-            # 현재 요청의 사용자의 refresh token을 가져옵니다.
-            refresh_token = request.auth
-            token = RefreshToken(refresh_token)
+        return response
 
-            # 토큰을 블랙리스트에 추가합니다.
-            token.blacklist()
-
-            request.session.flush()
-
-            res = Response({"detail": "Logout successful."}, status=status.HTTP_200_OK)
-            res.delete_cookie("access")
-
-            return res
-        except TokenError:
-            return Response(
-                {"detail": "Invalid token."}, status=status.HTTP_400_BAD_REQUEST
-            )
 
 
 class MyPageView(APIView):
@@ -147,3 +176,8 @@ class MyPageView(APIView):
                 MyPageSerializer(updated_info).data, status=status.HTTP_200_OK
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request):
+        user = request.user
+        user.delete()
+        return Response({"message": "계정이 삭제되었습니다."}, status=status.HTTP_204_NO_CONTENT)

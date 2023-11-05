@@ -11,9 +11,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = ["email"]
 
-    # user_lat = models.FloatField(null=True) #위도
-    # user_lon = models.FloatField(null=True) #경도
-    # is_recommend = models.BooleanField(default=False)
+    user_lat = models.FloatField(null=True, blank=True)  # 위도
+    user_lon = models.FloatField(null=True, blank=True)  # 경도
+    is_recommend = models.BooleanField(default=True, blank=True)  # 추천여부
+    
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
