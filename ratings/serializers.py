@@ -12,6 +12,8 @@ class RatingSerializer(serializers.ModelSerializer):
 
 
 class RatingListSerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField()
+    restaurant = serializers.StringRelatedField()
 
     class Meta:
         model = Rating

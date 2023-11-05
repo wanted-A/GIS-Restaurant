@@ -49,3 +49,6 @@ class Restaurant(models.Model):
     restaurant_code = models.CharField(
         max_length=200, unique=True, verbose_name="사업장코드"
     )
+
+    def __str__(self):
+        return self.restaurant_name
