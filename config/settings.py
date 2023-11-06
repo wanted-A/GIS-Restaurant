@@ -35,6 +35,7 @@ CUSTOM_APPS = [
     "users.apps.UsersConfig",
     "restaurants.apps.RestaurantsConfig",
     "ratings.apps.RatingsConfig",
+    "location.apps.LocationConfig",
 ]
 
 SYSTEM_APPS = [
