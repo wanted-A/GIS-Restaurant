@@ -10,7 +10,7 @@ import pandas as pd
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
 
-from restaurants.models import Location
+from location.models import Location
 
 def load_location_data():
     fields = {
