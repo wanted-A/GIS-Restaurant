@@ -21,9 +21,9 @@ class RestaurantSerializer(serializers.ModelSerializer):
             "longitude",
             "rating",
             "restaurant_code",
-            "reviews"
+            "reviews",
         ]
-    
+
     def get_reviews(self, obj):
         restaurant = Restaurant.objects.get(id=obj.id)
         # 리뷰는 최신순으로 5개까지만 반환하도록 한다.
@@ -63,9 +63,9 @@ class RestaurantDetailSerializer(serializers.ModelSerializer):
             "longitude",
             "rating",
             "restaurant_code",
-            "reviews"
+            "reviews",
         ]
-    
+
     def get_reviews(self, obj):
         restaurant = Restaurant.objects.get(id=obj.id)
         review_list = restaurant.restaurant_ratings.all().order_by("-created_at")[:5]
