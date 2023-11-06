@@ -39,9 +39,8 @@ class UserAdmin(admin.ModelAdmin):
             },
         ),
     )
-
     readonly_fields = ("last_login", "date_joined", "user_lat", "user_lon")
-
+    
     list_display = (
         "id",
         "username",
