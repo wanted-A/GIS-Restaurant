@@ -23,30 +23,29 @@ class SignupView(APIView):
     def post(self, request):
         serializer = SignupSerializer(data=request.data)
         if serializer.is_valid():
-            location_data = get_location_data()
-            if location_data:
-                user = serializer.save(
-                    user_lat=location_data["location"]["lat"],
-                    user_lon=location_data["location"]["lng"],
-                )
-                return Response(
-                    {
-                        "pk": user.pk,
-                        "username": user.username,
-                        "email": user.email,
-                        "message": "회원가입 성공!",
-                        "is_recommend": user.is_recommend,
-                        "user_lat": user.user_lat,
-                        "user_lon": user.user_lon,
-                    },
-                    status=status.HTTP_201_CREATED,
-                )
-            else:
-                return Response(
-                    {"message": "위치 정보를 가져올 수 없습니다."},
-                    status=status.HTTP_503_SERVICE_UNAVAILABLE,
-                )
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            # location_data = get_location_data()
+            # if location_data:
+            user = serializer.save()
+            return Response(
+                {
+                    "pk": user.pk,
+                    "username": user.username,
+                    "email": user.email,
+                    "message": "회원가입 성공!",
+                    # "is_recommend": user.is_recommend,
+                    # "user_lat": user.user_lat,
+                    # "user_lon": user.user_lon,
+                },
+                status=status.HTTP_201_CREATED,
+            )
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        #     else:
+        #         return Response(
+        #             {"message": "위치 정보를 가져올 수 없습니다."},
+        #             status=status.HTTP_503_SERVICE_UNAVAILABLE,
+        #         )
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # /api/v1/users/login/
