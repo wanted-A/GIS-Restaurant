@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from ratings.serializers import RatingListSerializer
-from restaurants.models import Location, Restaurant
+from restaurants.models import Restaurant
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
@@ -70,10 +70,3 @@ class RestaurantDetailSerializer(serializers.ModelSerializer):
         restaurant = Restaurant.objects.get(id=obj.id)
         review_list = restaurant.restaurant_ratings.all().order_by("-created_at")[:5]
         return RatingListSerializer(review_list, many=True).data
-    
-
-class LocationSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Location
-        fields = ["id", "do_si", "sgg", "latitude", "longitude"]
