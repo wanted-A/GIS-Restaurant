@@ -48,7 +48,7 @@ FIELDS = {
     "REFINE_WGS84_LAT": "longitude",
 }
 
-BUISINESS_TYPE = [
+BUSINESS_TYPE = [
     "Genrestrtmovmntcook",  # 이동조리
     "Genrestrtcate",  # 까페
     "Genrestrtlunch",  # 김밥/도시락
@@ -131,26 +131,36 @@ def preprocess_data(raw_data):
     return raw_data
 
 
-# 전처리된 데이터를 실제 저장하는 함수
+# 전처리된 데이터를 실제 저장 또는 업데이트하는 함수
 @shared_task
 def save_raw_data(total_list, page):
     for raw_data in total_list:
         try:
             preprocessed_data = preprocess_data(raw_data)
             restaurant_code = f'{preprocessed_data.get("BIZPLC_NM")}|{preprocessed_data.get("REFINE_LOTNO_ADDR")}|{preprocessed_data.get("LICENSG_DE")}'
-
-            # 근데 여기서 continue하면 업데이트가 안됨....
-            if Restaurant.objects.filter(restaurant_code=restaurant_code).exists():
-                continue
-
-            mapped_data = {FIELDS[k]: v for k, v in preprocessed_data.items()}
+            mapped_data = {
+                FIELDS[k]: v for k, v in preprocessed_data.items() if k in FIELDS
+            }
             mapped_data["restaurant_code"] = restaurant_code
 
-            Restaurant(**mapped_data).save()
+            # 레스토랑 객체를 가져오거나 새로 생성합니다.
+            obj, created = Restaurant.objects.get_or_create(
+                restaurant_code=restaurant_code, defaults=mapped_data
+            )
+
+            # 객체가 이미 존재하면, 변경사항을 확인하고 필요한 경우 업데이트합니다.
+            if not created:
+                update_fields = []
+                for field, value in mapped_data.items():
+                    if getattr(obj, field) != value:
+                        setattr(obj, field, value)
+                        update_fields.append(field)
+                if update_fields:
+                    obj.save(update_fields=update_fields)
 
         except Exception as e:
             response = {
-                "error_message": e,
+                "error_message": str(e),
                 "error_page": page,
                 "error_point": raw_data.get("BIZPLC_NM"),
             }
@@ -164,7 +174,7 @@ def save_raw_data(total_list, page):
 def raw_data_handler():
     start = time.time()
 
-    for business_type in BUISINESS_TYPE:
+    for business_type in BUSINESS_TYPE:
         list_total_count = get_count(business_type)
 
         for i in range((list_total_count // 100) + 1):
