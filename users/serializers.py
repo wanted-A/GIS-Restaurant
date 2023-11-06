@@ -23,13 +23,13 @@ class SignupSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         password = validated_data.pop("password")
-        user_lat = validated_data.pop("user_lat", None)
-        user_lon = validated_data.pop("user_lon", None)
+        # user_lat = validated_data.pop("user_lat", default=0.0)
+        # user_lon = validated_data.pop("user_lon", default=0.0)
         hashed_password = make_password(password)
         user = User.objects.create(
             password=hashed_password,
-            user_lat=user_lat,
-            user_lon=user_lon,
+            # user_lat=user_lat,
+            # user_lon=user_lon,
             **validated_data,
         )
         return user

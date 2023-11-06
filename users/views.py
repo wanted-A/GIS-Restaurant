@@ -22,30 +22,29 @@ class SignupView(APIView):
     def post(self, request):
         serializer = SignupSerializer(data=request.data)
         if serializer.is_valid():
-            user = serializer.save()
-            user.save()
-
-            # simple jwt 발급
-            token = TokenObtainPairSerializer.get_token(user)
-            refresh_token = str(token)
-            access_token = str(token.access_token)
-
-            res = Response(
-                {
-                    "user_pk": user.pk,
-                    "username": user.username,
-                    "email": user.email,
-                    "message": "회원가입 성공",
-                    "token": {
-                        "access": str(access_token),
-                        "refresh": str(refresh_token),
+            # location_data = get_location_data()
+            # if location_data:
+                user = serializer.save()
+                return Response(
+                    {
+                        "pk": user.pk,
+                        "username": user.username,
+                        "email": user.email,
+                        "message": "회원가입 성공!",
+                        "is_recommend": user.is_recommend,
+                        # "user_lat": user.user_lat,
+                        # "user_lon": user.user_lon,
                     },
-                },
-                status=status.HTTP_201_CREATED,
-            )
-
-            return res
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                    status=status.HTTP_201_CREATED,
+                )
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        #     else:
+        #         return Response(
+        #             {"message": "위치 정보를 가져올 수 없습니다."},
+        #             status=status.HTTP_503_SERVICE_UNAVAILABLE,
+        #         )
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LoginView(APIView):

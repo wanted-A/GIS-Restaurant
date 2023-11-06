@@ -2,6 +2,7 @@ import os
 import requests
 from dotenv import load_dotenv
 
+
 # 환경 변수를 로드하는 부분
 load_dotenv(verbose=True)
 
