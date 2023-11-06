@@ -7,6 +7,9 @@ from .models import User
 
 
 class SignupSerializer(serializers.ModelSerializer):
+    user_lat = serializers.FloatField(write_only=True, required=False)
+    user_lon = serializers.FloatField(write_only=True, required=False)
+
     class Meta:
         model = User
         fields = (
@@ -14,12 +17,21 @@ class SignupSerializer(serializers.ModelSerializer):
             "username",
             "email",
             "password",
+            "user_lat",
+            "user_lon",
         )
 
     def create(self, validated_data):
         password = validated_data.pop("password")
+        # user_lat = validated_data.pop("user_lat", default=0.0)
+        # user_lon = validated_data.pop("user_lon", default=0.0)
         hashed_password = make_password(password)
-        user = User.objects.create(password=hashed_password, **validated_data)
+        user = User.objects.create(
+            password=hashed_password,
+            # user_lat=user_lat,
+            # user_lon=user_lon,
+            **validated_data,
+        )
         return user
 
     def validate_password(self, password):
@@ -35,7 +47,7 @@ class SignupSerializer(serializers.ModelSerializer):
             raise ParseError("비밀번호를 입력하세요.")
         return password
 
-
+      
 class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

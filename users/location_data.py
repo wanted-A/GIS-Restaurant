@@ -19,5 +19,4 @@ def get_location_data():
     else:
         return None, None
 
-
 # print(get_location_data())

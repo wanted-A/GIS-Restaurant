@@ -279,4 +279,9 @@ pyrightconfig.json
 pyvenv.cfg
 pip-selfcheck.json
 
+# Celerybeat
+celerybeat-schedule.*
+
+.vscode/
+
 # End of https://www.toptal.com/developers/gitignore/api/django,venv,python
