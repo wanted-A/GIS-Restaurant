@@ -22,8 +22,7 @@ class RestaurantAPITestCase(APITestCase):
             latitude=37.5665,
             longitude=126.9780,
             zip_code="04524",
-            restaurant_code="REST123"
-            # Add any other required fields with their default or specific values
+            restaurant_code="REST123",
         )
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
