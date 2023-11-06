@@ -35,6 +35,7 @@ CUSTOM_APPS = [
     "users.apps.UsersConfig",
     "restaurants.apps.RestaurantsConfig",
     "ratings.apps.RatingsConfig",
+    "location.apps.LocationConfig",
 ]
 
 SYSTEM_APPS = [
@@ -129,6 +130,11 @@ USE_TZ = True  # True로 설정해야 jwt token 시간이 장고 기준으로 �
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

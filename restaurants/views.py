@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.exceptions import NotFound
-from ratings.serializers import RatingListSerializer
+from rest_framework import permissions
 
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantDetailSerializer, RestaurantSerializer
@@ -44,4 +44,3 @@ class RestaurantDetailAPIView(APIView):
         restaurant = self.get_object(restaurant_id)
         serializer = RestaurantDetailSerializer(restaurant)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
