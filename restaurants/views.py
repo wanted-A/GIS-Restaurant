@@ -2,10 +2,10 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.exceptions import NotFound
-from ratings.serializers import RatingListSerializer
+from rest_framework import permissions
 
-from restaurants.models import Restaurant
-from restaurants.serializers import RestaurantDetailSerializer, RestaurantSerializer
+from restaurants.models import Location, Restaurant
+from restaurants.serializers import LocationSerializer, RestaurantDetailSerializer, RestaurantSerializer
 
 
 # GET api/v1/restaurants/<int:restaurant_id>/
@@ -45,3 +45,11 @@ class RestaurantDetailAPIView(APIView):
         serializer = RestaurantDetailSerializer(restaurant)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+# GET api/v1/restaurants/location/
+class LocationListAPIView(APIView):
+    
+    def get(self, request):
+        queryset = Location.objects.all()
+        serializer = LocationSerializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
