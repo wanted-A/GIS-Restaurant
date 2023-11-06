@@ -3,9 +3,6 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 
 from .location_data import get_location_data
 from .serializers import SignupSerializer
@@ -22,12 +19,9 @@ class SignupView(APIView):
     def post(self, request):
         serializer = SignupSerializer(data=request.data)
         if serializer.is_valid():
-            location_data = get_location_data()
-            if location_data:
-                user = serializer.save(
-                    user_lat=location_data["location"]["lat"],
-                    user_lon=location_data["location"]["lng"],
-                )
+            # location_data = get_location_data()
+            # if location_data:
+                user = serializer.save()
                 return Response(
                     {
                         "pk": user.pk,
@@ -35,14 +29,16 @@ class SignupView(APIView):
                         "email": user.email,
                         "message": "회원가입 성공!",
                         "is_recommend": user.is_recommend,
-                        "user_lat": user.user_lat,
-                        "user_lon": user.user_lon,
+                        # "user_lat": user.user_lat,
+                        # "user_lon": user.user_lon,
                     },
                     status=status.HTTP_201_CREATED,
                 )
-            else:
-                return Response(
-                    {"message": "위치 정보를 가져올 수 없습니다."},
-                    status=status.HTTP_503_SERVICE_UNAVAILABLE,
-                )
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        #     else:
+        #         return Response(
+        #             {"message": "위치 정보를 가져올 수 없습니다."},
+        #             status=status.HTTP_503_SERVICE_UNAVAILABLE,
+        #         )
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
