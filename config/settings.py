@@ -1,8 +1,10 @@
+from celery.schedules import crontab
 from pathlib import Path
 import os
 import environ
 from datetime import timedelta
-import my_settings
+
+# import my_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -14,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(env_file=os.path.join(BASE_DIR, ".env"))
 
 SECRET_KEY = env("SECRET_KEY")
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
@@ -25,13 +27,14 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
+    "django_celery_beat",
+    "django_celery_results",
 ]
 
 CUSTOM_APPS = [
     "users.apps.UsersConfig",
     "restaurants.apps.RestaurantsConfig",
     "ratings.apps.RatingsConfig",
-    "dataHandler.apps.DatahandlerConfig",
 ]
 
 SYSTEM_APPS = [
@@ -122,6 +125,7 @@ USE_L10N = True
 
 USE_TZ = True  # True로 설정해야 jwt token 시간이 장고 기준으로 설정됨(한국시간)
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -163,4 +167,20 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
     "TOKEN_BLACKLIST_ENABLED": True,
     "TOKEN_BLACKLIST_APP": "rest_framework_simplejwt.token_blacklist",
+}
+
+# Celery
+CELERY_BROKER_URL = "amqp://localhost:5672"
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+# Celery-beat
+CELERY_TIMEZONE = "Asia/Seoul"
+CELERY_ENABLE_UTC = False
+CELERY_BEAT_SCHEDULE = {
+    "test": {
+        "task": "restaurants.tasks.raw_data_handler",
+        "schedule": crontab(minute="*/5"),  # 5분마다 실행
+    }
 }
