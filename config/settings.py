@@ -125,7 +125,6 @@ USE_L10N = True
 
 USE_TZ = True  # True로 설정해야 jwt token 시간이 장고 기준으로 설정됨(한국시간)
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -168,6 +167,12 @@ SIMPLE_JWT = {
     "TOKEN_BLACKLIST_ENABLED": True,
     "TOKEN_BLACKLIST_APP": "rest_framework_simplejwt.token_blacklist",
 }
+
+# session
+ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True  # 비밀번호 지워지지않음
+ACCOUNT_SESSION_REMEMBER = True  # 로그인 상태 유지
+SESSION_COOKIE_AGE = 3600  # 쿠기 유효기간 1시간
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # 브라우저를 닫아도 세션기록 유지!
 
 # Celery
 CELERY_BROKER_URL = "amqp://localhost:5672"
