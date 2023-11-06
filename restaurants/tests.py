@@ -67,7 +67,7 @@ class RestaurantAPITestCase(APITestCase):
             "longitude",
             "rating",
             "restaurant_code",
-            "reviews",  # Assuming this is handled by the SerializerMethodField correctly
+            "reviews",
         }
         self.assertEqual(set(response.data.keys()), expected_keys)  # 필드 검증
 
