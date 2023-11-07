@@ -6,6 +6,7 @@ class Location(models.Model):
     sgg = models.CharField(max_length=20)
     latitude = models.FloatField(verbose_name="위도")
     longitude = models.FloatField(verbose_name="경도")
+    views = models.IntegerField(default=0, verbose_name="조회 수")
 
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -19,4 +20,4 @@ class Location(models.Model):
     )
 
     def __str__(self):
-        return f"{self.do_si}|{self.sgg} 위/경도 : [{self.latitude}, {self.longitude}]"
+        return f"{self.do_si}|{self.sgg} 위/경도 : [{self.latitude}, {self.longitude}] 조회 수: {self.views}"
