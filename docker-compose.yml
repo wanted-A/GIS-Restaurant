@@ -1,0 +1,50 @@
+version: "3.8"
+services:
+  gis-restaurant-rabbitmq:
+    image: rabbitmq
+    container_name: gis-restaurant-rabbitmq
+    ports:
+      - "5672:5672"
+    networks:
+      - restaurant-network
+
+  gis-restaurant-celery:
+    image: gis-restaurant-celery
+    container_name: gis-restaurant-celery
+    depends_on:
+      - gis-restaurant-rabbitmq
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: celery -A config worker -l info
+    volumes:
+      - .:/gis-restaurant
+    env_file:
+      - ./.env
+    environment:
+      - CELERY_BROKER_URL=amqp://gis-restaurant-rabbitmq:5672
+    networks:
+      - restaurant-network
+
+  gis-restaurant-celery-beat:
+    image: gis-restaurant-celery-beat
+    container_name: gis-restaurant-celery-beat
+    depends_on:
+      - gis-restaurant-rabbitmq
+      - gis-restaurant-celery
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: celery -A config beat -l info
+    volumes:
+      - .:/gis-restaurant
+    env_file:
+      - ./.env
+    environment:
+      - CELERY_BROKER_URL=amqp://gis-restaurant-rabbitmq:5672
+    networks:
+      - restaurant-network
+
+networks:
+  restaurant-network:
+    driver: bridge

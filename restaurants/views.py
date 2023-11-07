@@ -5,6 +5,8 @@ from rest_framework.exceptions import NotFound
 
 from drf_yasg.utils import swagger_auto_schema
 
+from rest_framework import permissions
+
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantDetailSerializer, RestaurantSerializer
 
