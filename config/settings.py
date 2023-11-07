@@ -131,7 +131,7 @@ USE_TZ = True  # True로 설정해야 jwt token 시간이 장고 기준으로 �
 
 STATIC_URL = "static/"
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
@@ -190,8 +190,21 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "Asia/Seoul"
 CELERY_ENABLE_UTC = False
 CELERY_BEAT_SCHEDULE = {
-    "test": {
+    "restaurant_data": {
         "task": "restaurants.tasks.raw_data_handler",
-        "schedule": crontab(minute="*/5"),  # 5분마다 실행
+        "schedule": crontab(minute="0", hour="20"),  # 매일 20시 00분에 실행
+    },
+    "load_location": {
+        "task": "location.tasks.save_to_model",
+        "schedule": crontab(minute="30", hour="19"),  # 매일 19시 30분에 실행
+    },
+}
+
+# redis
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
     }
 }

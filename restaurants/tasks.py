@@ -169,7 +169,8 @@ def save_raw_data(total_list, page):
 
 
 # 페이지별로 데이터 저장을 요청하는 함수
-# celery 미적용시: 0:03:29.111738
+# docker 환경에서 celery 미적용시: 277.44430s
+# docker 환경에서 celery 적용시: 140.89964s
 @shared_task
 def raw_data_handler():
     start = time.time()
