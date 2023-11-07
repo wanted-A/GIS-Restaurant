@@ -29,6 +29,7 @@ THIRD_PARTY_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "django_celery_beat",
     "django_celery_results",
+    "drf_yasg",
 ]
 
 CUSTOM_APPS = [
@@ -167,6 +168,13 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
     "TOKEN_BLACKLIST_ENABLED": True,
     "TOKEN_BLACKLIST_APP": "rest_framework_simplejwt.token_blacklist",
+}
+
+# Swagger 인증
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "DRF Token": {"type": "apiKey", "name": "Authorization", "in": "header"}
+    }
 }
 
 # Celery

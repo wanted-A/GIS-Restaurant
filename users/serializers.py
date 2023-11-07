@@ -47,7 +47,7 @@ class SignupSerializer(serializers.ModelSerializer):
             raise ParseError("비밀번호를 입력하세요.")
         return password
 
-      
+
 class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

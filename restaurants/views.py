@@ -3,8 +3,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.exceptions import NotFound
 
+from drf_yasg.utils import swagger_auto_schema
+
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantDetailSerializer, RestaurantSerializer
+
+from swagger import *
 
 import os
 import environ
@@ -31,6 +35,15 @@ class RestaurantAPIView(APIView):
         except Restaurant.DoesNotExist:
             raise NotFound("해당 맛집을 찾을 수 없습니다.")
 
+    @swagger_auto_schema(
+        operation_id="맛집 상세정보(간략한 데이터)",
+        operation_description="맛집에 대한 상세 정보 중 중요한 데이터만 제공합니다.",
+        manual_parameters=[PATH_RESTAURANT_ID],
+        responses={
+            200: RestaurantSerializer,
+            400: "```{\ndetail: 해당 맛집을 찾을 수 없습니다.",
+        },
+    )
     def get(self, request, restaurant_id):
         restaurant = self.get_object(restaurant_id)
         serializer = RestaurantSerializer(restaurant)
@@ -49,6 +62,15 @@ class RestaurantDetailAPIView(APIView):
         except Restaurant.DoesNotExist:
             raise NotFound("해당 맛집을 찾을 수 없습니다.")
 
+    @swagger_auto_schema(
+        operation_id="맛집 상세정보",
+        operation_description="맛집에 대한 상세정보를 제공합니다.",
+        manual_parameters=[PATH_RESTAURANT_ID],
+        responses={
+            200: RestaurantDetailSerializer,
+            400: "```{\ndetail: 해당 맛집을 찾을 수 없습니다.",
+        },
+    )
     def get(self, request, restaurant_id):
         restaurant = self.get_object(restaurant_id)
         serializer = RestaurantDetailSerializer(restaurant)
@@ -110,6 +132,25 @@ def get_reverse_geocoding(user_point):
 
 # GET api/v1/restaurants/list
 class RestaurantListAPIView(APIView):
+    """
+    맛집 목록(위치 기반)
+    """
+
+    @swagger_auto_schema(
+        operation_id="맛집 목록",
+        operation_description="사용자 위치로부터 일정 범위 내에 위치하는 맛집 목록을 제공합니다.",
+        manual_parameters=[
+            QUERY_LAT,
+            QUERY_LON,
+            QUERY_RANGE,
+            QUERY_SORT_TYPE,
+        ],
+        responses={
+            200: RestaurantSerializer,
+            400: "```{\nmessage: 필수값을 입력해주세요.",
+            404: "```{\nmessage: 해당 조건에 일치하는 음식점이 없습니다.",
+        },
+    )
     def get(self, request):
         user_lat = request.query_params.get("lat")
         user_lon = request.query_params.get("lon")
@@ -159,7 +200,8 @@ class RestaurantListAPIView(APIView):
         # 조건에 일치하는 음식점이 없을 경우 serializer는 빈 리스트가 됨
         if serializer.data == []:
             return Response(
-                {"message": "해당 조건에 일치하는 음식점이 없습니다."}, status=status.HTTP_404_NOT_FOUND
+                {"message": "해당 조건에 일치하는 음식점이 없습니다."},
+                status=status.HTTP_404_NOT_FOUND,
             )
 
         return Response(serializer.data, status=status.HTTP_200_OK)
