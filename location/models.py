@@ -1,5 +1,10 @@
 from django.db import models
 
+"""
+주의: 조회수는 있다고 가칭하고 로직 구현을 위해 추가한 없는 필드입니다.
+따라서 이 브렌치는, 참고용으로만 보시고, 실제로는 이 브렌치를 머지하거나 사용하지 않아야 합니다.
+"""
+
 
 class Location(models.Model):
     do_si = models.CharField(max_length=20)
