@@ -2,7 +2,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.exceptions import NotFound
-from rest_framework import permissions
+
+from django.core.cache import cache
 
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantDetailSerializer, RestaurantSerializer
@@ -33,8 +34,22 @@ class RestaurantAPIView(APIView):
             raise NotFound("해당 맛집을 찾을 수 없습니다.")
 
     def get(self, request, restaurant_id):
+        # 캐싱된 데이터가 있는지 확인
+        restaurant_data = cache.get(f"restaurants/{restaurant_id}/")
+
+        # 해당 음식점 데이터가 캐싱되어 있을 경우
+        if restaurant_data:
+            # 캐싱된 데이터를 반환
+            return Response(restaurant_data, status=status.HTTP_200_OK)
+
+        # 해당 음식점 데이터가 캐싱되어 있지 않을 경우
         restaurant = self.get_object(restaurant_id)
+
+        # 데이터를 직렬화한 다음 캐싱
         serializer = RestaurantSerializer(restaurant)
+        # 변동이 있을 수 있는 데이터이므로 만료시간을 600초로 설정
+        cache.set(f"restaurants/{restaurant_id}/", serializer.data, timeout=600)
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -51,8 +66,21 @@ class RestaurantDetailAPIView(APIView):
             raise NotFound("해당 맛집을 찾을 수 없습니다.")
 
     def get(self, request, restaurant_id):
+        # 캐싱된 데이터가 있는지 확인
+        restaurant_data = cache.get(f"restaurants/detail/{restaurant_id}/")
+
+        # 해당 음식점 데이터가 캐싱되어 있을 경우
+        if restaurant_data:
+            return Response(restaurant_data, status=status.HTTP_200_OK)
+
+        # 해당 음식점 데이터가 캐싱되어 있지 않을 경우
         restaurant = self.get_object(restaurant_id)
+
+        # 데이터를 직렬화한 다음 캐싱
         serializer = RestaurantDetailSerializer(restaurant)
+        # 변동이 있을 수 있는 데이터이므로 만료시간을 600초로 설정
+        cache.set(f"restaurants/detail/{restaurant_id}/", serializer.data, timeout=600)
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -109,7 +137,7 @@ def get_reverse_geocoding(user_point):
         print(e)
 
 
-# GET api/v1/restaurants/list
+# GET api/v1/restaurants/list/
 class RestaurantListAPIView(APIView):
     def get(self, request):
         user_lat = request.query_params.get("lat")
@@ -126,6 +154,17 @@ class RestaurantListAPIView(APIView):
 
         sort_type = request.query_params.get("sort_type", "거리순")
 
+        # 캐싱된 데이터가 있는지 확인
+        restaurant_data = cache.get(
+            f"restaurants/list/?lat={user_lat}&lon={user_lon}&range={range}&sort_type={sort_type}"
+        )
+
+        # 해당 음식점 목록 데이터가 캐싱되어 있을 경우
+        if restaurant_data:
+            return Response(restaurant_data, status=status.HTTP_200_OK)
+
+        # 해당 음식점 목록 데이터가 캐싱되어 있지 않을 경우
+
         # DB에 지역명이 일치하는 데이터만 가져옴
         restaurants = Restaurant.objects.filter(
             location_name=get_reverse_geocoding(user_point)
@@ -137,6 +176,7 @@ class RestaurantListAPIView(APIView):
 
             # 위경도를 이용해 두 점간 거리를 산출
             distance = get_haversine_distance(user_point, restaurant_point)
+
             if distance <= range:
                 # 거리순 정렬을 위해 음식점 객체와 거리를 묶음
                 restaurant_with_distance.append((restaurant, distance))
@@ -156,7 +196,15 @@ class RestaurantListAPIView(APIView):
             restaurant_data[0] for restaurant_data in restaurant_with_distance
         ]
 
+        # 데이터를 직렬화한 다음 캐싱
         serializer = RestaurantSerializer(restaurant_list, many=True)
+        # 변동이 있을 수 있는 데이터이므로 만료시간을 600초로 설정
+        cache.set(
+            f"restaurants/list/?lat={user_lat}&lon={user_lon}&range={range}&sort_type={sort_type}",
+            serializer.data,
+            timeout=600,
+        )
+
         # 조건에 일치하는 음식점이 없을 경우 serializer는 빈 리스트가 됨
         if serializer.data == []:
             return Response(

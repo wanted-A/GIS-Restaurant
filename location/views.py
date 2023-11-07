@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from django.core.cache import cache
 
 from location.serializers import LocationSerializer
+from location.models import Location
 
 
 # GET api/v1/location/
@@ -12,7 +13,20 @@ from location.serializers import LocationSerializer
 # Redis 적용 후: 16ms
 class LocationListAPIView(APIView):
     def get(self, request):
-        location = cache.get("location_data")
-        serializer = LocationSerializer(location, many=True)
+        # 캐싱된 데이터가 있는지 확인
+        location_data = cache.get("location/")
+
+        # 지역 데이터가 캐싱되어 있을 경우
+        if location_data:
+            # 캐싱된 데이터를 반환
+            return Response(location_data, status=status.HTTP_200_OK)
+
+        # 지역 데이터가 캐싱되어 있지 않을 경우
+        location_data = Location.objects.all()
+
+        # 데이터를 직렬화한 다음 캐싱
+        serializer = LocationSerializer(location_data, many=True)
+        # 장시간 변동이 없는 데이터, 만료기간 설정 X
+        cache.set("location/", serializer.data)
 
         return Response(serializer.data, status=status.HTTP_200_OK)

@@ -10,15 +10,14 @@ from restaurants.models import Restaurant
 
 # api/v1/ratings/<int:restaurant_id>/review/
 class ReviewAPIView(APIView):
-
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, restaurant_id):
         return Restaurant.objects.get(id=restaurant_id)
-    
+
     def get(self, request, restaurant_id):
         return Response(
-            {"message" : "content(선택), score(필수) 를 입력해주세요."},
+            {"message": "content(선택), score(필수) 를 입력해주세요."},
             status=status.HTTP_200_OK,
         )
 
@@ -29,13 +28,14 @@ class ReviewAPIView(APIView):
         serializer = RatingSerializer(data=request.data)
 
         if serializer.is_valid():
-
             restaurant = self.get_object(restaurant_id)
             review_count = Rating.objects.filter(restaurant=restaurant).count()
-            
+
             new_review = serializer.save(user=request.user, restaurant=restaurant)
 
-            restaurant.rating = ((restaurant.rating * review_count) + new_review.score) / (review_count + 1)
+            restaurant.rating = (
+                (restaurant.rating * review_count) + new_review.score
+            ) / (review_count + 1)
             restaurant.save()
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -37,8 +37,8 @@ FIELDS = {
     "REFINE_LOTNO_ADDR": "road_address",
     "REFINE_ROADNM_ADDR": "lot_num_address",
     "REFINE_ZIP_CD": "zip_code",
-    "REFINE_WGS84_LOGT": "latitude",
-    "REFINE_WGS84_LAT": "longitude",
+    "REFINE_WGS84_LAT": "latitude",
+    "REFINE_WGS84_LOGT": "longitude",
 }
 
 
