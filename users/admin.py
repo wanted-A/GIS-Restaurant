@@ -13,7 +13,7 @@ class UserAdmin(admin.ModelAdmin):
                     "email",
                     "user_lat",  # 위도
                     "user_lon",  # 경도
-                    "is_recommend",  # 점심 추천여부
+                    "is_recommend",  # 점심추천여부
                 ),
                 "classes": ("wide",),
             },
@@ -39,8 +39,9 @@ class UserAdmin(admin.ModelAdmin):
             },
         ),
     )
+
     readonly_fields = ("last_login", "date_joined", "user_lat", "user_lon")
-    
+
     list_display = (
         "id",
         "username",
