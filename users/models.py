@@ -1,9 +1,13 @@
 from django.db import models
 from .manager import CustomUserManager
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+import uuid
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    id = models.UUIDField(
+        primary_key=True, editable=False, unique=True, default=uuid.uuid4
+    )
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=255, unique=True)
     objects = CustomUserManager()

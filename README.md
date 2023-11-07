@@ -54,7 +54,10 @@ python manage.py runserver
 <br>
 
 ## API Documents
-![API-DOCS](https://img.shields.io/badge/API_Document-8CA1AF.svg?style=for-the-badge&logo=readthedocs&logoColor=white)
+
+<a href="https://www.notion.so/ssu-uky/API-Docs-f74fa68afce8405ba80a3f93fab09678?pvs=4">
+<img src="https://img.shields.io/badge/API_Document-8CA1AF.svg?style=for-the-badge&logo=readthedocs&logoColor=white&link=https://www.notion.so/ssu-uky/API-Docs-f74fa68afce8405ba80a3f93fab09678?pvs=4"/>
+</a>
 
 <br>
 
