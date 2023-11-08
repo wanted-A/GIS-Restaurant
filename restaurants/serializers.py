@@ -26,8 +26,8 @@ class RestaurantSerializer(serializers.ModelSerializer):
 
     def get_reviews(self, obj):
         restaurant = Restaurant.objects.get(id=obj.id)
-        # 리뷰는 최신순으로 5개까지만 반환하도록 한다.
-        review_list = restaurant.restaurant_ratings.all().order_by("-created_at")[:5]
+        # 리뷰는 최신순으로 20개까지만 반환하도록 한다.
+        review_list = restaurant.restaurant_ratings.all().order_by("-created_at")[:20]
         return RatingListSerializer(review_list, many=True).data
 
 

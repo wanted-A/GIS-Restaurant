@@ -7,6 +7,8 @@ from rest_framework import permissions
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantDetailSerializer, RestaurantSerializer
 
+from django.core.cache import cache
+
 import os
 import environ
 import requests
@@ -33,8 +35,26 @@ class RestaurantAPIView(APIView):
             raise NotFound("해당 맛집을 찾을 수 없습니다.")
 
     def get(self, request, restaurant_id):
+        cached_data = cache.get(f"restaurants/{restaurant_id}/")
+        
+        if cached_data:
+            print("cached data : ", restaurant_id)
+            return Response(cached_data, status=status.HTTP_200_OK)
+        
         restaurant = self.get_object(restaurant_id)
         serializer = RestaurantSerializer(restaurant)
+        
+        # 캐싱 조건 : 리뷰 개수가 10개 이상 또는 평점이 4점 이상이면 캐싱
+        cache_condition = (len(serializer.data["reviews"]) >= 10) or (serializer.data["rating"] >= 4)
+        
+        if cache_condition:
+            print("caching..... : ", restaurant_id)
+            cache.set(
+                key = f"restaurants/{restaurant_id}/",
+                value = serializer.data,
+                timeout=600 # 평점과 리뷰 개수는 갱신이 되니까 timeout 설정
+            )
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
