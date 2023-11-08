@@ -10,6 +10,4 @@ COPY . /gis-restaurant
 # 명령어 실행
 RUN apt-get update && \
     pip install --upgrade pip && \
-    pip install -r requirements.txt && \
-    python3 manage.py makemigrations && \
-    python3 manage.py migrate
+    pip install -r requirements.txt

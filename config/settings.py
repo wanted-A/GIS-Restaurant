@@ -29,6 +29,7 @@ THIRD_PARTY_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "django_celery_beat",
     "django_celery_results",
+    "drf_yasg",
 ]
 
 CUSTOM_APPS = [
@@ -84,14 +85,22 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("DB_NAME"),
+        "USER": env("DB_USER"),
+        "PASSWORD": env("DB_PASSWORD"),
+        "HOST": "gis-postgres",
+        "PORT": "5432",
     }
 }
-
-# DATABASES = my_settings.DATABASES
 
 
 # Password validation
@@ -180,8 +189,16 @@ ACCOUNT_SESSION_REMEMBER = True  # 로그인 상태 유지
 SESSION_COOKIE_AGE = 3600  # 쿠기 유효기간 1시간
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # 브라우저를 닫아도 세션기록 유지!
 
+# Swagger 인증
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "DRF Token": {"type": "apiKey", "name": "Authorization", "in": "header"}
+    }
+}
+
 # Celery
-CELERY_BROKER_URL = "amqp://localhost:5672"
+# CELERY_BROKER_URL = "amqp://localhost:5672"
+CELERY_BROKER_URL = "amqp://gis-rabbitmq:5672"
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
@@ -192,11 +209,11 @@ CELERY_ENABLE_UTC = False
 CELERY_BEAT_SCHEDULE = {
     "restaurant_data": {
         "task": "restaurants.tasks.raw_data_handler",
-        "schedule": crontab(minute="0", hour="20"),  # 매일 20시 00분에 실행
+        "schedule": crontab(minute="0", hour="20"),
     },
     "load_location": {
         "task": "location.tasks.save_to_model",
-        "schedule": crontab(minute="30", hour="19"),  # 매일 19시 30분에 실행
+        "schedule": crontab(minute="30", hour="19"),
     },
 }
 
@@ -204,7 +221,8 @@ CELERY_BEAT_SCHEDULE = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        # "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": "redis://gis-redis:6379/1",
         "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
     }
 }

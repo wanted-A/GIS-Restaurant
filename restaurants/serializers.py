@@ -70,3 +70,22 @@ class RestaurantDetailSerializer(serializers.ModelSerializer):
         restaurant = Restaurant.objects.get(id=obj.id)
         review_list = restaurant.restaurant_ratings.all().order_by("-created_at")[:5]
         return RatingListSerializer(review_list, many=True).data
+
+
+class RestaurantListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Restaurant
+        fields = [
+            "id",
+            "location_name",
+            "location_code",
+            "restaurant_name",
+            "clean_business_type",
+            "road_address",
+            "lot_num_address",
+            "zip_code",
+            "latitude",
+            "longitude",
+            "rating",
+            "restaurant_code",
+        ]

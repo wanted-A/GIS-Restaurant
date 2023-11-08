@@ -4,14 +4,23 @@ from rest_framework.views import APIView
 
 from django.core.cache import cache
 
+from drf_yasg.utils import swagger_auto_schema
+
 from location.serializers import LocationSerializer
 from location.models import Location
+
+from swagger import *
 
 
 # GET api/v1/location/
 # Redis 적용 전: 54ms
 # Redis 적용 후: 16ms
 class LocationListAPIView(APIView):
+    @swagger_auto_schema(
+        operation_id="시군구 목록 조회",
+        operation_description="음식점 데이터에 사용되는 시군구의 목록을 조회할 수 있습니다.",
+        responses={200: LocationSerializer},
+    )
     def get(self, request):
         # 캐싱된 데이터가 있는지 확인
         location_data = cache.get("location/")

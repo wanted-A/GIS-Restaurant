@@ -1,5 +1,7 @@
 from celery import shared_task
 
+from django.db.models import Sum, Count
+
 from .models import Restaurant
 
 import requests
@@ -191,3 +193,18 @@ def raw_data_handler():
             save_raw_data(total_list, i + 1)
 
     print(f"실행시간: {time.time() - start}")
+
+
+@shared_task
+def caching_recommended_restaurant():
+    ratings_sum = float(
+        Restaurant.objects.all().aggregate(Sum("rating")).get("rating__sum")
+    )
+    data_count = int(
+        Restaurant.objects.all().aggregate(Count("rating")).get("rating__count")
+    )
+
+    average_rating = ratings_sum / data_count
+
+    print(average_rating)
+    print(average_rating * 0.1)
