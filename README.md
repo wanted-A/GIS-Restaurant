@@ -49,6 +49,7 @@
 ```py
 pip install -r requirements.txt
 python manage.py runserver
+docker compose -f "docker-compose.yml" up -d --build
 ```
 
 <br>
