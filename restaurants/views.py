@@ -147,7 +147,7 @@ class RestaurantListAPIView(APIView):
         ],
         responses={
             200: RestaurantSerializer,
-            400: "```{\nmessage: 필수값을 입력해주세요.",
+            400: "```{\nmessage: lat, lon, range 값을 입력해주세요.",
             404: "```{\nmessage: 해당 조건에 일치하는 음식점이 없습니다.",
         },
     )
